@@ -35,11 +35,11 @@
 ## Installation
 
 1. make sure you run with node 18 and above
-2. git clone git@github.com:ah584d/fireworks.git
+2. git clone git@github.com:ah584d/sps-homework.git
 3. cd fe
 4. npm ci
 5. npm run dev
-6. 
+6. open "http://localhost:5173/"
 
 ## Usage
 
