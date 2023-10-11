@@ -25,15 +25,18 @@
 
 ## Left over
 
-1. Input field validation with regexp
-2. Support expenses with decimal
-3. Component tests (using react-native-testing-library), I have just added some Functional Unit Testing
+1. 
 
 ## Reasons Behind Technical Choices
-1. You might find some unusual elements in my code, and I would be happy to explain my decisions. In general, I aimed to maintain clean code. However, due to the limited time available (I only worked on it during the evenings), I took some shortcuts that I wouldn't have taken in a production application.
+1. 
 
 ## Installation
-
+1. docker pull mongo:latest
+2. docker run -d --name mongodb -p 27017:27017 mongo
+3. docker ps
+4. docker exec –it mongodb mongosh
+5. db.runCommand({hello:1})
+6. npm run start:dev
 1. make sure you run with node 18 and above
 2. git clone git@github.com:ah584d/sps-homework.git
 3. cd fe
