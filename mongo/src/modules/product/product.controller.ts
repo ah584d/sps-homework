@@ -14,13 +14,10 @@ export class ProductController {
     @Post('/createProduct')
     async createProduct(@Body() createProductDto: CreateProductDto, @Res() res: Response) {
         const session = await this.mongoConnection.startSession();
-        session.startTransaction();
         try {
             const newProduct = await this.productService.createProduct(createProductDto, session);
-            await session.commitTransaction();
             return res.status(HttpStatus.OK).send(newProduct);
         } catch (error) {
-            await session.abortTransaction();
             throw new BadRequestException(error);
         } finally {
             session.endSession();

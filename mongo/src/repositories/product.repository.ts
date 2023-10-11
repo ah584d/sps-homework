@@ -13,8 +13,9 @@ export class ProductRepository {
         let product = new this.productModel({
             user: createProductDto.userId,
             productName: createProductDto.productName,
+            category: createProductDto.category,
+            imageURL: createProductDto.imageURL,
             status: 'CREATED',
-            client: null,
         });
         try {
             product = await product.save({ session });
@@ -30,8 +31,11 @@ export class ProductRepository {
         actualDate.toUTCString();
 
         const updateData = {
+            user: updateProduct.userId,
             status: updateProduct.status,
-            client: updateProduct.clientId,
+            productName: updateProduct.productName,
+            category: updateProduct.category,
+            imageURL: updateProduct.imageURL,
             updatedAt: actualDate,
         };
 
@@ -67,7 +71,6 @@ export class ProductRepository {
             if (limit === 0) {
                 products = await this.productModel
                     .find()
-                    .populate('client')
                     .populate('user', 'name email')
                     .skip(from)
                     .sort({ createdAt: -1 })
@@ -75,7 +78,6 @@ export class ProductRepository {
             } else {
                 products = await this.productModel
                     .find()
-                    .populate('client')
                     .populate('user', 'name email')
                     .skip(from)
                     .limit(limit)
@@ -95,7 +97,7 @@ export class ProductRepository {
                 response = {
                     ok: true,
                     data: [],
-                    message: 'No hay products',
+                    message: 'No product founds',
                 };
             }
             return response;

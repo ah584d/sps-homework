@@ -12,13 +12,10 @@ export class UserController {
     @Post('/createUser')
     async createUser(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
         const session = await this.mongoConnection.startSession();
-        //session.startTransaction();
         try {
             const newUser = await this.userService.createUser(createUserDto, session);
-            //await session.commitTransaction();
             return res.status(HttpStatus.CREATED).send(newUser);
         } catch (error) {
-           // await session.abortTransaction();
             throw new BadRequestException(error);
         } finally {
             session.endSession();

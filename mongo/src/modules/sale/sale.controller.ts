@@ -1,7 +1,6 @@
-import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Query, Res } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Res } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/mongoose';
 import { Connection, Schema as MongooseSchema } from 'mongoose';
-import { GetQueryDto } from '../../dto/getQueryDto';
 import { CreateSaleDto } from './dto/createSale.dto';
 import { SaleService } from './sale.service';
 
@@ -26,7 +25,7 @@ export class SaleController {
     }
 
     @Get('/getSaleById/:id')
-    async getSaleById(@Param('id') id: MongooseSchema.Types.ObjectId, @Query() getQueryDto: GetQueryDto, @Res() res: any) {
+    async getSaleById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: any) {
         const storage = await this.saleService.getSaleById(id);
         return res.status(HttpStatus.OK).send(storage);
     }

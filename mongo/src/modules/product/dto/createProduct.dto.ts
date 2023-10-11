@@ -1,8 +1,8 @@
-import { IsOptional } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 import { Schema as MongooseSchema } from 'mongoose';
 
 export class CreateProductDto {
-    @IsOptional()
+    @IsNotEmpty()
     productName: string;
     @IsOptional()
     userId: MongooseSchema.Types.ObjectId;
@@ -10,6 +10,8 @@ export class CreateProductDto {
     id: MongooseSchema.Types.ObjectId;
     @IsOptional()
     status: string;
-    @IsOptional()
-    clientId: MongooseSchema.Types.ObjectId;
+    @IsNotEmpty()
+    imageURL: string;
+    @IsNotEmpty()
+    category: 'Condos' | 'Villas' | 'Open houses' | 'Lands' | 'Bought';
 }
