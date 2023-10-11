@@ -28,13 +28,13 @@ export class ClientController {
 
     @Get('/getClients')
     async getClients(@Query() getQueryDto: GetQueryDto, @Res() res: Response) {
-        const clients: any = await this.clientService.getClients(getQueryDto);
+        const clients = await this.clientService.getClients(getQueryDto);
         return res.status(HttpStatus.OK).send(clients);
     }
 
     @Get('/getClientById/:id')
     async getClientById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
-        const client: any = await this.clientService.getClientById(id);
+        const client = await this.clientService.getClientById(id);
         return res.status(HttpStatus.OK).send(client);
     }
 }

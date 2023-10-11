@@ -28,7 +28,7 @@ export class ClientRepository {
         try {
             client = await client.save({ session });
         } catch (error) {
-            throw new InternalServerErrorException('Error al consultar la BD', error);
+            throw new InternalServerErrorException('Error occurred while cresting a client', error);
         }
 
         return client;
@@ -73,12 +73,12 @@ export class ClientRepository {
                 response = {
                     ok: true,
                     data: [],
-                    message: 'No hay clientes',
+                    message: 'There is no clients',
                 };
             }
             return response;
         } catch (error) {
-            throw new InternalServerErrorException('Error al intentar consultar los clientes', error);
+            throw new InternalServerErrorException('Error occurred while fetching clients', error);
         }
     }
 
@@ -87,7 +87,7 @@ export class ClientRepository {
         try {
             client = await this.clientModel.findById(id).exec();
         } catch (error) {
-            throw new InternalServerErrorException('No existe el registro con id' + id, error);
+            throw new InternalServerErrorException('No client for this id' + id, error);
         }
 
         if (!client) {

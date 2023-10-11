@@ -10,7 +10,7 @@ export class ClientService {
     constructor(private readonly clientRepository: ClientRepository, private readonly userService: UserService) {}
 
     async createClient(createClientDto: CreateClientDto, session: ClientSession) {
-        const getUser: any = await this.userService.getUserById(createClientDto.userId);
+        const getUser = await this.userService.getUserById(createClientDto.userId);
 
         if (getUser.role === 'ADMIN') {
             return await this.clientRepository.createClient(createClientDto, session);

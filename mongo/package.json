@@ -1,8 +1,8 @@
 {
-    "name": "nestjs-mongodb-app",
+    "name": "sps",
     "version": "0.0.1",
     "description": "",
-    "author": "CfVillarroel",
+    "author": "avraham",
     "private": true,
     "license": "MIT",
     "scripts": {

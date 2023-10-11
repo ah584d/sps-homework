@@ -16,7 +16,7 @@ export class ProductController {
         const session = await this.mongoConnection.startSession();
         session.startTransaction();
         try {
-            const newProduct: any = await this.productService.createProduct(createProductDto, session);
+            const newProduct = await this.productService.createProduct(createProductDto, session);
             await session.commitTransaction();
             return res.status(HttpStatus.OK).send(newProduct);
         } catch (error) {
@@ -32,7 +32,7 @@ export class ProductController {
         const session = await this.mongoConnection.startSession();
         session.startTransaction();
         try {
-            const newProduct: any = await this.productService.updateProduct(updateProductDto, session);
+            const newProduct = await this.productService.updateProduct(updateProductDto, session);
             await session.commitTransaction();
             return res.status(HttpStatus.OK).send(newProduct);
         } catch (error) {
@@ -45,13 +45,13 @@ export class ProductController {
 
     @Get('/getProductById/:id')
     async getProductById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
-        const storage: any = await this.productService.getProductById(id);
+        const storage = await this.productService.getProductById(id);
         return res.status(HttpStatus.OK).send(storage);
     }
 
     @Get('/getProducts')
     async getAllProducts(@Query() getQueryDto: GetQueryDto, @Res() res: any) {
-        const storages: any = await this.productService.getProducts(getQueryDto);
+        const storages = await this.productService.getProducts(getQueryDto);
         return res.status(HttpStatus.OK).send(storages);
     }
 }

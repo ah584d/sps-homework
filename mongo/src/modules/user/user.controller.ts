@@ -14,7 +14,7 @@ export class UserController {
         const session = await this.mongoConnection.startSession();
         session.startTransaction();
         try {
-            const newUser: any = await this.userService.createUser(createUserDto, session);
+            const newUser = await this.userService.createUser(createUserDto, session);
             await session.commitTransaction();
             return res.status(HttpStatus.CREATED).send(newUser);
         } catch (error) {
@@ -27,7 +27,7 @@ export class UserController {
 
     @Get('/getUserById/:id')
     async getCompanyById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
-        const user: any = await this.userService.getUserById(id);
+        const user = await this.userService.getUserById(id);
         return res.status(HttpStatus.OK).send(user);
     }
 }

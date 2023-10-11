@@ -1,7 +1,7 @@
 export class ResponseDto {
     ok: boolean;
-    data?: any;
+    data?: unknown;
     message?: string;
-    error?: any;
+    error?: unknown;
     nTotal?: number;
 }

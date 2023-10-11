@@ -14,7 +14,7 @@ export class SaleController {
         const session = await this.mongoConnection.startSession();
         session.startTransaction();
         try {
-            const newProduct: any = await this.saleService.createSale(createSaleDto, session);
+            const newProduct = await this.saleService.createSale(createSaleDto, session);
             await session.commitTransaction();
             return res.status(HttpStatus.OK).send(newProduct);
         } catch (error) {
@@ -27,7 +27,7 @@ export class SaleController {
 
     @Get('/getSaleById/:id')
     async getSaleById(@Param('id') id: MongooseSchema.Types.ObjectId, @Query() getQueryDto: GetQueryDto, @Res() res: any) {
-        const storage: any = await this.saleService.getSaleById(id);
+        const storage = await this.saleService.getSaleById(id);
         return res.status(HttpStatus.OK).send(storage);
     }
 }

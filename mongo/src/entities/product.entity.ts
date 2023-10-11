@@ -16,7 +16,7 @@ export class Product extends Document {
     status: string;
 
     @Prop({ type: MongooseSchema.Types.ObjectId, required: false, ref: Client.name })
-    client: any;
+    client: unknown;
 
     @Prop({ type: Date, default: Date.now })
     updatedAt: Date;

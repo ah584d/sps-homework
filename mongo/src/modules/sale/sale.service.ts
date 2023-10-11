@@ -13,7 +13,7 @@ export class SaleService {
     async createSale(createSaleDto: CreateSaleDto, session: ClientSession) {
         const { userId, productId, clientId } = createSaleDto;
 
-        const getUser: any = await this.userService.getUserById(userId);
+        const getUser = await this.userService.getUserById(userId);
 
         if (getUser.role !== 'ADMIN') {
             throw new UnauthorizedException('Incorrect Role');
