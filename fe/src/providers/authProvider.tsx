@@ -2,10 +2,14 @@ import axios from 'axios';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { FCC } from '../types/global-types';
 
-const AuthContext = createContext({});
+const AuthContext = createContext<{ token: string | null; setToken: (newToken: string) => void }>({
+    token: null,
+    setToken: () => {},
+});
 
-const AuthProvider: FCC<{}> = ({ children }) => {
-    // State to hold the authentication token
+interface AuthProviderProps {}
+
+export const AuthProvider: FCC<AuthProviderProps> = ({ children }) => {
     const [token, setToken_] = useState(localStorage.getItem('token'));
 
     const setToken = (newToken: string) => {
@@ -30,11 +34,9 @@ const AuthProvider: FCC<{}> = ({ children }) => {
         [token],
     );
 
-    return <AuthContext.Provider value={contextValue}>{hildren}</AuthContext.Provider>;
+    return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
     return useContext(AuthContext);
 };
-
-export default AuthProvider;
