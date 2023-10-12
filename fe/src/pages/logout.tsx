@@ -1,12 +1,13 @@
+import { ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../common/hooks/auth.hook';
 import styles from './Login.module.css';
 
-const Logout = () => {
+const Logout = (): ReactElement => {
     const { setToken } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogout = () => {
+    const handleLogout = (): void => {
         setToken('');
         navigate('/', { replace: true });
     };
