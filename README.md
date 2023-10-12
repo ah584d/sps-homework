@@ -1,4 +1,4 @@
-<img src="pictures/fire.png" align="right" width="98" height="129" style="background-color:white;"/>
+<img src="pictures/blue-house.avif" align="right" width="98" height="129" style="background-color:white;"/>
 
 ## SPS
 > A simple app
