@@ -1,26 +1,18 @@
-<img src="pictures/blue-house.avif" align="right" width="98" height="129" style="background-color:white;"/>
+<img src="pictures/blue-house.avif" align="right" width="200" height="129" style="background-color:white;"/>
 
 ## SPS
-> A simple app
+> A full stack real estate web application , whith NestJS, RecatJS and MongoDB
 
 ## Features
 
 1. Local storage
-2. zustand state management
-3. svg format support
-4. last version of RN (very fast with hermes!)
-5. cool bottom nav bar design 
-6. react navigation stack
+
 7. fully typescript (0 compilation error using strict mode and strong types)
    
 <img src="pictures/ts.jpg" align="left" width="214" height="68" style="background-color:white;"/><br><br><br>
 
 8. filtering
 9. date picker
-10. functionnal Unit Test example
-
-<img src="pictures/tests.jpg" align="left" width="214" height="68" style="background-color:white;"/><br><br><br>
-
 
 
 ## Left over
