@@ -35,7 +35,7 @@
 // export default App
 
 import { AuthProvider } from './providers/authProvider';
-import Routes from './routes';
+import Routes from './routes/Routes';
 
 function App() {
     return (

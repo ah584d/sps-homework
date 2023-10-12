@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../common/hooks/auth.hook';
@@ -11,8 +12,13 @@ const Login = (): ReactElement => {
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
-    const handleLogin = () => {
-        setToken('this is a test token');
+    const handleLogin = async () => {
+        const response = await axios.post('http://localhost:3001/auth/login', {
+            email: 'ahamu@free.fr3', //email,
+            password: 'my_pass', //password,
+        });
+        console.log(`====> DEBUG response: `, response);
+        setToken('');
         navigate('/', { replace: true });
     };
 

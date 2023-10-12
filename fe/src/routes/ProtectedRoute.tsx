@@ -5,8 +5,8 @@ import { useAuth } from '../common/hooks/auth.hook';
 export const ProtectedRoute = (): ReactElement => {
     const { token } = useAuth();
 
-    if (!token) {
-        return <Navigate to="/login" />;
+    if (!token || token.length === 0) {
+        return <Navigate to="/" />;
     }
 
     return <Outlet />;

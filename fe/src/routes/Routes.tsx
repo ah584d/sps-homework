@@ -26,7 +26,7 @@ const Routes = () => {
             children: [
                 {
                     path: '/',
-                    element: <Home />,
+                    element: <Login />,
                 },
                 {
                     path: '/profile',
@@ -46,10 +46,10 @@ const Routes = () => {
             path: '/',
             element: <Login />,
         },
-        {
-            path: '/login',
-            element: <Login />,
-        },
+        // {
+        //     path: '/login',
+        //     element: <Login />,
+        // },
     ];
 
     // Combine and conditionally include routes based on authentication status
