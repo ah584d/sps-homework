@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { Client, ClientSchema } from '../../entities/client.entity';
+import { Client, ClientSchema } from '../../entities/client.entity_';
 import { User, UserSchema } from '../../entities/user.entity';
-import { ClientRepository } from '../../repositories/client.repository';
+import { ClientRepository } from '../../repositories/client.repository_';
 import { UserModule } from '../user/user.module';
 import { ClientController } from './client.controller';
 import { ClientService } from './client.service';

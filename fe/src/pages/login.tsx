@@ -6,9 +6,9 @@ import styles from './Login.module.css';
 const Login = (): ReactElement => {
     const { setToken } = useAuth();
     const navigate = useNavigate();
-    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [userNameError, setUserNameError] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
     const handleLogin = () => {
@@ -17,11 +17,16 @@ const Login = (): ReactElement => {
     };
 
     const onButtonClick = () => {
-        setUserNameError('');
+        setEmailError('');
         setPasswordError('');
 
-        if ('' === userName) {
-            setUserNameError('Please enter your username');
+        if ('' === email) {
+            setEmailError('Please enter your username');
+            return;
+        }
+
+        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+            setEmailError('Please enter a valid username');
             return;
         }
 
@@ -34,6 +39,7 @@ const Login = (): ReactElement => {
             setPasswordError('The password must be 8 characters or longer');
             return;
         }
+
         handleLogin();
     };
 
@@ -47,13 +53,13 @@ const Login = (): ReactElement => {
 
             <div className={styles.inputContainer}>
                 <input
-                    value={userName}
-                    placeholder="Enter your username here"
-                    onChange={(ev) => setUserName(ev.target.value)}
+                    value={email}
+                    placeholder="Enter your email here"
+                    onChange={(ev) => setEmail(ev.target.value)}
                     className={styles.inputBox}
                 />
 
-                <label className={styles.errorLabel}>{userNameError}</label>
+                <label className={styles.errorLabel}>{emailError}</label>
             </div>
 
             <br />

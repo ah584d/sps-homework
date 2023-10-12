@@ -3,8 +3,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
 import { GetQueryDto } from '../dto/getQueryDto';
 import { ResponseDto } from '../dto/response.dto';
-import { Client } from '../entities/client.entity';
-import { CreateClientDto } from '../modules/client/dto/createClient.dto';
+import { Client } from '../entities/client.entity_';
+import { CreateClientDto } from '../modules/client_/dto/createClient.dto';
 
 export class ClientRepository {
     constructor(
@@ -45,12 +45,7 @@ export class ClientRepository {
 
         try {
             if (limit === 0) {
-                clients = await this.clientModel
-                    .find()
-                    .populate('client')
-                    .skip(from)
-                    .sort({ createdAt: -1 })
-                    .exec();
+                clients = await this.clientModel.find().populate('client').skip(from).sort({ createdAt: -1 }).exec();
             } else {
                 clients = await this.clientModel
                     .find()

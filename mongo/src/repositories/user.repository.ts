@@ -17,6 +17,7 @@ export class UserRepository {
         user = new this.userModel({
             name: createUserDto.name,
             email: createUserDto.email,
+            password: createUserDto.password,
             role: createUserDto.role,
         });
 
@@ -49,9 +50,9 @@ export class UserRepository {
     }
 
     async getUserByEmail(email: string) {
-        let user;
+        let user: User;
         try {
-            user = await this.userModel.findOne({ email }, 'name email img role').exec();
+            user = await this.userModel.findOne({ email }, 'name email password role').exec();
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

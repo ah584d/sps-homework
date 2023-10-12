@@ -1,6 +1,7 @@
 import { IsNotEmpty, IsString } from "class-validator";
+import { LoginUserDto } from "./userLogin.dto";
 
-export class CreateUserDto {
+export class CreateUserDto extends LoginUserDto{
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -8,6 +9,10 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   email: string;
+
+  @IsString()
+  @IsNotEmpty()
+  password: string;
 
   @IsString()
   @IsNotEmpty()

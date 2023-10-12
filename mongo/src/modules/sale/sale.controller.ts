@@ -1,8 +1,9 @@
-import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Res } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Res, UseGuards } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/mongoose';
 import { Connection, Schema as MongooseSchema } from 'mongoose';
 import { CreateSaleDto } from './dto/createSale.dto';
 import { SaleService } from './sale.service';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('sale')
 export class SaleController {
@@ -24,6 +25,7 @@ export class SaleController {
         }
     }
 
+    @UseGuards(AuthGuard)
     @Get('/getSaleById/:id')
     async getSaleById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: any) {
         const storage = await this.saleService.getSaleById(id);
