@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useEffect, useMemo, useState } from 'react';
+import { AuthContextType } from '../types/common .types';
 import { FCC } from '../types/global-types';
 
-const AuthContext = createContext<{ token: string | null; setToken: (newToken: string) => void }>({
+export const AuthContext = createContext<AuthContextType>({
     token: null,
     setToken: () => {},
 });
@@ -35,8 +36,4 @@ export const AuthProvider: FCC<AuthProviderProps> = ({ children }) => {
     );
 
     return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
-};
-
-export const useAuth = () => {
-    return useContext(AuthContext);
 };
