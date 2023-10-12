@@ -1,8 +1,8 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
-import { User } from '../entities/user.entity';
+import { ClientSession, Model } from 'mongoose';
 import { CreateUserDto } from '../modules/user/dto/createUser.dto';
+import { User } from './entities/user.entity';
 
 export class UserRepository {
     constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {}
@@ -34,10 +34,25 @@ export class UserRepository {
         return user;
     }
 
-    async getUserById(id: MongooseSchema.Types.ObjectId) {
-        let user;
+    async getAllUsers() {
+        let users: User[];
         try {
-            user = await this.userModel.findById({ _id: id });
+            users = await this.userModel.find();
+        } catch (error) {
+            throw new InternalServerErrorException(error);
+        }
+
+        if (!users) {
+            throw new NotFoundException('No user found');
+        }
+
+        return users;
+    }
+
+    async getUserById(id: string) {
+        let user: User;
+        try {
+            user = await this.userModel.findById(id);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

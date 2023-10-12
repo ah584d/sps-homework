@@ -5,7 +5,7 @@ export class CreateProductDto {
     @IsNotEmpty()
     productName: string;
     @IsOptional()
-    userId: MongooseSchema.Types.ObjectId;
+    userId: string;
     @IsOptional()
     id: MongooseSchema.Types.ObjectId;
     @IsOptional()

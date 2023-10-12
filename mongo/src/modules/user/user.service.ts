@@ -12,7 +12,11 @@ export class UserService {
         return createdUser;
     }
 
-    async getUserById(id: MongooseSchema.Types.ObjectId) {
+    async getAllUSers() {
+        return await this.userRepository.getAllUsers();
+    }
+
+    async getUserById(id: string) {
         return await this.userRepository.getUserById(id);
     }
 

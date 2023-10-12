@@ -6,7 +6,7 @@ export class CreateSaleDto {
   productId: MongooseSchema.Types.ObjectId;
 
   @IsNotEmpty()
-  userId: MongooseSchema.Types.ObjectId;
+  userId: string;
 
   @IsNotEmpty()
   total: number;

@@ -25,8 +25,15 @@ export class UserController {
 
     @UseGuards(AuthGuard)
     @Get('/:id')
-    async getCompanyById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
+    async getUserById(@Param('id') id: string, @Res() res: Response) {
         const user = await this.userService.getUserById(id);
         return res.status(HttpStatus.OK).send(user);
+    }
+
+    @UseGuards(AuthGuard)
+    @Get()
+    async getAllUsers(@Res() res: Response) {
+        const users = await this.userService.getAllUSers();
+        return res.status(HttpStatus.OK).send(users);
     }
 }

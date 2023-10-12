@@ -2,9 +2,9 @@ import { ConflictException, InternalServerErrorException, NotFoundException } fr
 import { InjectModel } from '@nestjs/mongoose';
 import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
 import { GetQueryDto } from '../dto/getQueryDto';
-import { Product } from '../entities/product.entity';
 import { CreateProductDto } from '../modules/product/dto/createProduct.dto';
 import { UpdateProductDto } from '../modules/product/dto/updateProduct.dto';
+import { Product } from './entities/product.entity';
 
 export class ProductRepository {
     constructor(@InjectModel(Product.name) private readonly productModel: Model<Product>) {}
@@ -39,10 +39,10 @@ export class ProductRepository {
             updatedAt: actualDate,
         };
 
-        let product;
+        let product: Product;
         try {
             product = await this.productModel
-                .findOneAndUpdate({ _id: updateProduct.id }, updateData, {
+                .findOneAndUpdate({ _id: updateProduct.id }, {
                     new: true,
                 })
                 .session(session)
@@ -107,7 +107,7 @@ export class ProductRepository {
     }
 
     async getProductById(id: MongooseSchema.Types.ObjectId) {
-        let product;
+        let product: Product;
         try {
             product = await this.productModel.findById(id).exec();
         } catch (error) {
