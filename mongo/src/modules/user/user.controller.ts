@@ -10,6 +10,7 @@ import { AuthGuard } from '../auth/auth.guard';
 export class UserController {
     constructor(@InjectConnection() private readonly mongoConnection: Connection, private userService: UserService) {}
 
+    // Non protected route to allow creating users for the Demo :-)
     @Post()
     async createUser(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
         const session = await this.mongoConnection.startSession();
@@ -24,6 +25,14 @@ export class UserController {
     }
 
     @UseGuards(AuthGuard)
+    @Get()
+    async getAllUsers(@Res() res: Response) {
+        const users = await this.userService.getAllUSers();
+        return res.status(HttpStatus.OK).send(users);
+    }
+
+
+    @UseGuards(AuthGuard)
     @Get('/:id')
     async getUserById(@Param('id') id: string, @Res() res: Response) {
         const user = await this.userService.getUserById(id);
@@ -31,9 +40,9 @@ export class UserController {
     }
 
     @UseGuards(AuthGuard)
-    @Get()
-    async getAllUsers(@Res() res: Response) {
-        const users = await this.userService.getAllUSers();
-        return res.status(HttpStatus.OK).send(users);
+    @Get('email/:email')
+    async getUserByEmail(@Param('email') email: string, @Res() res: Response) {
+        const user = await this.userService.getUserByEmail(email);
+        return res.status(HttpStatus.OK).send(user);
     }
 }

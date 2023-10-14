@@ -69,6 +69,7 @@ export class UserRepository {
         let user: User;
         try {
             user = await this.userModel.findOne({ email }, 'name email password role').exec();
+            console.log(`====> DEBUG user: `, user);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from './modules/config/config.module';
 import { ConfigService } from './modules/config/config.service';
-import { ProductModule } from './modules/product/product.module';
+import { ProductModule } from './modules/property/property.module';
 import { UserModule } from './modules/user/user.module';
 
 @Module({
