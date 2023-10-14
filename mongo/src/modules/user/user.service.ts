@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { ClientSession, Schema as MongooseSchema } from 'mongoose';
-import { UserRepository } from '../../repositories/user.repository';
+import { ClientSession } from 'mongoose';
+import { UserRepository } from '../../repositories/db/user.repository';
 import { CreateUserDto } from './dto/createUser.dto';
 
 @Injectable()
@@ -24,4 +24,3 @@ export class UserService {
         return await this.userRepository.getUserByEmail(email);
     }
 }
-  

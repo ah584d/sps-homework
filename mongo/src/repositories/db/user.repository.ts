@@ -1,8 +1,9 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { ClientSession, Model } from 'mongoose';
-import { CreateUserDto } from '../modules/user/dto/createUser.dto';
-import { User } from './entities/user.entity';
+import { User } from '../entities/user.entity';
+import { CreateUserDto } from '../../modules/user/dto/createUser.dto';
+
 
 export class UserRepository {
     constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {}

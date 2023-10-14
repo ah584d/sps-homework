@@ -61,7 +61,7 @@ export class ProductRepository {
         return product;
     }
 
-    async getAllProducts(query: GetQueryDto) {
+    async getProducts(query: GetQueryDto) {
         let from = query.from || 0;
         from = Number(from);
 
