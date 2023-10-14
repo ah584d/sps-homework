@@ -1,10 +1,10 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
-import { GetQueryDto } from '../dto/getQueryDto';
-import { CreateProductDto } from '../modules/product/dto/createProduct.dto';
-import { UpdateProductDto } from '../modules/product/dto/updateProduct.dto';
-import { Product } from './entities/product.entity';
+import { CreateProductDto } from '../../modules/product/dto/createProduct.dto';
+import { GetQueryDto } from '../../modules/product/dto/getQueryDto';
+import { UpdateProductDto } from '../../modules/product/dto/updateProduct.dto';
+import { Product } from '../entities/product.entity';
 
 export class ProductRepository {
     constructor(@InjectModel(Product.name) private readonly productModel: Model<Product>) {}
@@ -42,9 +42,12 @@ export class ProductRepository {
         let product: Product;
         try {
             product = await this.productModel
-                .findOneAndUpdate({ _id: updateProduct.id }, {
-                    new: true,
-                })
+                .findOneAndUpdate(
+                    { _id: updateProduct.id },
+                    {
+                        new: true,
+                    },
+                )
                 .session(session)
                 .exec();
         } catch (error) {
@@ -58,7 +61,7 @@ export class ProductRepository {
         return product;
     }
 
-    async getProducts(query: GetQueryDto) {
+    async getAllProducts(query: GetQueryDto) {
         let from = query.from || 0;
         from = Number(from);
 

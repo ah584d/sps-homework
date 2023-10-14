@@ -17,12 +17,6 @@ export class Product extends Document {
   @Prop({ type: String })
   status: string;
 
-  @Prop({
-    type: MongooseSchema.Types.ObjectId,
-    required: false,
-    ref: User.name,
-  })
-  client: unknown;
 
   @Prop({ type: String, required: true })
   imageURL: string;

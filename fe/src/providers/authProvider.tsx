@@ -1,8 +1,7 @@
-import axios from 'axios';
 import { createContext, useEffect, useMemo, useState } from 'react';
+import { deleteTokenOnHttpHeader, setTokenOnHttpHeader } from '../services/network.service';
 import { AuthContextType } from '../types/common .types';
 import { FCC } from '../types/global-types';
-import { deleteTokenOnHttpHeader, setTokenOnHttpHeader } from '../services/network.service';
 
 export const AuthContext = createContext<AuthContextType>({
     token: null,

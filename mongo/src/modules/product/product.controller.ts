@@ -2,14 +2,17 @@ import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Pu
 import { InjectConnection } from '@nestjs/mongoose';
 import { Response } from 'express';
 import { Connection, Schema as MongooseSchema } from 'mongoose';
-import { GetQueryDto } from '../../dto/getQueryDto';
 import { CreateProductDto } from './dto/createProduct.dto';
+import { GetQueryDto } from './dto/getQueryDto';
 import { UpdateProductDto } from './dto/updateProduct.dto';
 import { ProductService } from './product.service';
 
 @Controller('product')
 export class ProductController {
-    constructor(@InjectConnection() private readonly mongoConnection: Connection, private productService: ProductService) {}
+    constructor(
+        @InjectConnection() private readonly mongoConnection: Connection,
+        private productService: ProductService,
+    ) {}
 
     @Post('/createProduct')
     async createProduct(@Body() createProductDto: CreateProductDto, @Res() res: Response) {
@@ -25,7 +28,11 @@ export class ProductController {
     }
 
     @Put('/updateProduct/:id')
-    async updateProduct(@Param('id') id: MongooseSchema.Types.ObjectId, @Body() updateProductDto: UpdateProductDto, @Res() res: Response) {
+    async updateProduct(
+        @Param('id') id: MongooseSchema.Types.ObjectId,
+        @Body() updateProductDto: UpdateProductDto,
+        @Res() res: Response,
+    ) {
         const session = await this.mongoConnection.startSession();
         session.startTransaction();
         try {

@@ -34,7 +34,7 @@ export class SaleRepository {
         return sale;
     }
 
-    async getSales(query: { from: number; limit: number }) {
+    async getAllSales(query: { from: number; limit: number }) {
         let from = query.from || 0;
         from = Number(from);
 
@@ -49,7 +49,6 @@ export class SaleRepository {
                     .find()
                     .populate('sale')
                     .populate('product')
-                    .populate('client')
                     .populate('user', 'name email')
                     .skip(from)
                     .sort({ createdAt: -1 })
@@ -59,7 +58,6 @@ export class SaleRepository {
                     .find()
                     .populate('sale')
                     .populate('product')
-                    .populate('client')
                     .populate('user', 'name email')
                     .skip(from)
                     .limit(limit)
@@ -79,7 +77,7 @@ export class SaleRepository {
                 response = {
                     ok: true,
                     data: [],
-                    message: 'No hay sales',
+                    message: 'No sales',
                 };
             }
             return response;
@@ -94,7 +92,6 @@ export class SaleRepository {
             sale = await this.saleModel
                 .findById(id)
                 .populate('product')
-                .populate('client')
                 .populate('user', 'name email')
                 .exec();
         } catch (error) {
@@ -109,7 +106,7 @@ export class SaleRepository {
     }
 
     async getSaleByProductId(productId: MongooseSchema.Types.ObjectId) {
-        let sale;
+        let sale: Sale;
         try {
             sale = await this.saleModel.find({ product: productId }).exec();
         } catch (error) {

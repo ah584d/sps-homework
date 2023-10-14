@@ -43,7 +43,7 @@ export class UserRepository {
         }
 
         if (!users) {
-            throw new NotFoundException('No user found');
+            throw new NotFoundException('No users found');
         }
 
         return users;
@@ -58,7 +58,7 @@ export class UserRepository {
         }
 
         if (!user) {
-            throw new NotFoundException('User not found');
+            throw new NotFoundException(`User ${id} not found`);
         }
 
         return user;
