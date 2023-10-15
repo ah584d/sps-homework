@@ -7,11 +7,12 @@ import { PropertyPayload } from '../types/common .types';
 import styles from './login.module.css';
 
 const Home = (): ReactElement => {
+    const [forceRefetchForDemo, setForceRefreshForDemo] = useState(false);
     const fetchProperties = async (userId: string): Promise<void> => {
         const [, result] = await getPropertiesByUserId(userId);
         if (result) {
             setProperties(result);
-        } 
+        }
     };
 
     const { userId } = useParams() ?? {};
@@ -21,12 +22,12 @@ const Home = (): ReactElement => {
         if (userId) {
             fetchProperties(userId);
         }
-    }, [userId]);
+    }, [userId, forceRefetchForDemo]);
 
     return (
         <div className={styles.homeContainer}>
             <Header />
-            <Listing listing={properties} />
+            <Listing listing={properties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
         </div>
     );
 };

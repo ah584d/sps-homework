@@ -1,14 +1,16 @@
 import { FC } from 'react';
-import { PropertyPayload } from '../../types/common .types';
 import { updatePropertyStatus } from '../../services/api.service';
+import { PropertyPayload } from '../../types/common .types';
 
-export interface CardProps extends PropertyPayload {}
+export interface CardProps extends PropertyPayload {
+    refresh(): void;
+}
 
-export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id }) => {
-
-    const onButtonCLicked = async(): Promise<void> => {
-        updatePropertyStatus(_id);
-    }
+export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, refresh }) => {
+    const onButtonCLicked = async (): Promise<void> => {
+        await updatePropertyStatus(_id);
+        refresh();
+    };
 
     const isButtonEnabled = status === 'To Sold';
     return (
@@ -22,14 +24,21 @@ export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, s
                 </p>
             </div>
             <div className="px-6 pt-4 pb-2">
-                <span className={`${isButtonEnabled ? 'active:bg-blue-700 hover:bg-blue-600 cursor-pointer bg-green-500': 'bg-orange-500' } inline-block shadow-lg   rounded-md px-3 py-1 text-sm font-semibold  text-white mr-2 mb-2`} onClick={onButtonCLicked}>
+                <span
+                    className={`${
+                        isButtonEnabled
+                            ? 'active:bg-blue-700 hover:bg-blue-600 cursor-pointer bg-green-500'
+                            : 'bg-orange-500'
+                    } inline-block shadow-lg   rounded-md px-3 py-1 text-sm font-semibold  text-white mr-2 mb-2`}
+                    onClick={onButtonCLicked}
+                >
                     {status}
                 </span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     {category}
                 </span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2" >
-                $ {price}
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    $ {price}
                 </span>
             </div>
         </div>
