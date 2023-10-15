@@ -25,7 +25,7 @@ const Routes = () => {
                     element: <Login />,
                 },
                 {
-                    path: '/profile',
+                    path: '/profile/:id',
                     element: <Home />,
                 },
                 {

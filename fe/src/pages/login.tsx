@@ -13,12 +13,12 @@ const Login = (): ReactElement => {
     const [passwordError, setPasswordError] = useState('');
 
     const handleLogin = async () => {
-        const [, result] = await getJWTToken('ahamu@free.fr3', 'my_pass');
+        const [, result] = await getJWTToken(email, password);
         if (result) {
-            setToken(result?.access_token);
-            navigate('/profile', { replace: true });
+            setToken(result?.accessToken);
+            navigate(`/profile/${result?.userId}`, { replace: true });
         } else {
-            setEmailError('Authentication error');
+            setEmailError(' One of your authentication detail is invalid');
         }
     };
 
@@ -50,7 +50,7 @@ const Login = (): ReactElement => {
     };
 
     return (
-        <div className={styles.mainContainer}>
+        <div className={styles.loginContainer}>
             <div className={styles.titleContainer}>
                 <div>Login</div>
             </div>

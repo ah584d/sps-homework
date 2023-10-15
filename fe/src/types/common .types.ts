@@ -10,4 +10,10 @@ export interface PropertyPayload {
     propertyName: string;
     userId: string;
     price: number;
+    status: string
+}
+
+export interface SignInResponse {
+    accessToken: string;
+    userId: string;
 }

@@ -1,10 +1,16 @@
 /* custom styles */
-.mainContainer {
+.loginContainer {
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.homeContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
 }
 
 .titleContainer {

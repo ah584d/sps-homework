@@ -16,7 +16,7 @@ export class PropertyRepository {
             category: createPropertyDto.category,
             imageURL: createPropertyDto.imageURL,
             price: createPropertyDto.price,
-            status: 'CREATED',
+            status: 'To Sold',
         });
         try {
             product = await product.save({ session });
@@ -68,7 +68,6 @@ export class PropertyRepository {
         let products: Property[];
 
         const filter = userId? {userId} : undefined;
-        console.log(`====> DEBUG filter: `, filter);
         try {
             if (limit === 0) {
                 products = await this.propertyModel

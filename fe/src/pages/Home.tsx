@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Header } from '../components/header/Header';
 import { Listing } from '../components/listing/Listing';
 import { getPropertiesByUserId } from '../services/api.service';
@@ -13,18 +14,18 @@ const Home = (): ReactElement => {
         }
     };
 
+    const { id } = useParams() ?? {};
+
     const [properties, setProperties] = useState<PropertyPayload[]>([]);
     useEffect(() => {
-        fetchProperties('652af03f2f0aabcd556b017f');
-    });
+        if (id) {
+            fetchProperties(id);
+        }
+    }, [id]);
 
     return (
-        <div className={styles.mainContainer}>
+        <div className={styles.homeContainer}>
             <Header />
-            <div className={styles.titleContainer}>
-                <div>Welcome!</div>
-            </div>
-
             <Listing listing={properties} />
         </div>
     );

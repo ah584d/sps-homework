@@ -1,12 +1,12 @@
 import { ROUTES } from '../common/const/apiRoutes';
-import { PropertyPayload } from '../types/common .types';
+import { PropertyPayload, SignInResponse } from '../types/common .types';
 import { ApiResponse } from '../types/http.types';
 import { networkManager } from './network.service';
 
 
-export const getJWTToken = async (email: string, password: string): Promise<ApiResponse<{access_token:string}>> => {
+export const getJWTToken = async (email: string, password: string): Promise<ApiResponse<SignInResponse>> => {
     try {
-        const { data } = await networkManager.post<{access_token:string}>(ROUTES.AUTH.LOGIN, {email, password});
+        const { data } = await networkManager.post<SignInResponse>(ROUTES.AUTH.LOGIN, {email, password});
         return [null, data];
     } catch (error) {
         const errorSentence = `Error occurred while trying to get JWT token: ${error}`;
@@ -17,10 +17,10 @@ export const getJWTToken = async (email: string, password: string): Promise<ApiR
 
 export const getPropertiesByUserId = async (userId: string): Promise<ApiResponse<PropertyPayload[]>> => {
     try {
-        const { data } = await networkManager.get<PropertyPayload[]>(`${ROUTES.PROPERTIES.BY_USER}${userId}`);
+        const { data } = await networkManager.get<PropertyPayload[]>(`${ROUTES.PROPERTIES.BY_USER_ID}${userId}`);
         return [null, data];
     } catch (error) {
-        const errorSentence = `Error occurred while trying to get properties: ${error}`;
+        const errorSentence = `Error occurred while trying to get properties by user Id ${userId}: ${error}`;
         console.warn(errorSentence);
         return [new Error(errorSentence), null];
     }

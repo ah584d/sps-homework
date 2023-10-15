@@ -1,6 +1,6 @@
 export const ROUTES = {
     PROPERTIES: {
-        BY_USER_ID: '/property/user',
+        BY_USER_ID: '/property/user/',
         PROPERTY: '/property',
     },
     AUTH: {

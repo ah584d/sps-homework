@@ -10,8 +10,7 @@
     background-size: cover;
     background-attachment: scroll;    
     height: 300px;
-    width: 1200px;
-    border: 2px solid black;
+    width: 100%;
 }
 
 .titleContainer {
