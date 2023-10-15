@@ -11,7 +11,7 @@ export class AuthService {
     // You'd instead use a library like bcrypt, with a salted one-way hash algorithm.
     // With that approach, you'd only store hashed passwords, and then compare the stored password to a hashed version of the incoming password,
     // thus never storing or exposing user passwords in plain text.
-    async signIn(email: string, pass: string): Promise<any> {
+    async signIn(email: string, pass: string): Promise<unknown> {
         const user = await this.userService.getUserByEmail(email);
         if (user?.password !== pass) {
             throw new UnauthorizedException();

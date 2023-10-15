@@ -10,10 +10,6 @@ const Routes = () => {
 
     const routesForPublic = [
         {
-            path: '/service',
-            element: <div>Service Page</div>,
-        },
-        {
             path: '/about-us',
             element: <div>About Us</div>,
         },
@@ -46,10 +42,6 @@ const Routes = () => {
             path: '/',
             element: <Login />,
         },
-        // {
-        //     path: '/login',
-        //     element: <Login />,
-        // },
     ];
 
     // Combine and conditionally include routes based on authentication status

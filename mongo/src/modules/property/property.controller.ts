@@ -67,7 +67,7 @@ export class ProductController {
     }
     @UseGuards(AuthGuard)
     @Get()
-    async getAllProducts(@Query() getQueryDto: GetQueryDto, @Res() res: any) {
+    async getAllProducts(@Query() getQueryDto: GetQueryDto, @Res() res: Response) {
         const storages = await this.propertyService.getProperties(getQueryDto);
         return res.status(HttpStatus.OK).send(storages);
     }

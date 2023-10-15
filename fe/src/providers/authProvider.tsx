@@ -14,6 +14,7 @@ export const AuthProvider: FCC<AuthProviderProps> = ({ children }) => {
     const [token, setToken_] = useState(localStorage.getItem('token'));
 
     const setToken = (newToken: string) => {
+        console.log(`====> DEBUG newToken: `, newToken);
         setToken_(newToken);
     };
 

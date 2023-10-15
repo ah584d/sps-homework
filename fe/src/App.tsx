@@ -1,7 +1,6 @@
 // import { useState } from 'react'
 // import reactLogo from '/react.svg'
 // import viteLogo from '/vite.svg'
-// import './App.css'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -34,10 +33,17 @@
 
 // export default App
 
+import { useEffect } from 'react';
 import { AuthProvider } from './providers/authProvider';
 import Routes from './routes/Routes';
+import { initAxios } from './services/network.service';
+import './App.css'
+
 
 function App() {
+    useEffect(() => {
+        initAxios();
+    },[])
     return (
         <AuthProvider>
             <Routes />

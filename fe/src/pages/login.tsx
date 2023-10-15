@@ -1,8 +1,8 @@
-import axios from 'axios';
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../common/hooks/auth.hook';
-import styles from './Login.module.css';
+import { getJWTToken } from '../services/api.service';
+import styles from './login.module.css';
 
 const Login = (): ReactElement => {
     const { setToken } = useAuth();
@@ -13,13 +13,13 @@ const Login = (): ReactElement => {
     const [passwordError, setPasswordError] = useState('');
 
     const handleLogin = async () => {
-        const response = await axios.post('http://localhost:3001/auth/login', {
-            email: 'ahamu@free.fr3', //email,
-            password: 'my_pass', //password,
-        });
-        console.log(`====> DEBUG response: `, response);
-        setToken('');
-        navigate('/', { replace: true });
+        const [, result] = await getJWTToken('ahamu@free.fr3', 'my_pass');
+        if (result) {
+            setToken(result?.access_token);
+            navigate('/profile', { replace: true });
+        } else {
+            setEmailError('Authentication error');
+        }
     };
 
     const onButtonClick = () => {
