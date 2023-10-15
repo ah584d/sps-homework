@@ -13,8 +13,12 @@ export class PropertyService {
         return await this.productRepository.createProperty(createPropertyDto, session);
     }
 
-    async getPropertyById(productId: MongooseSchema.Types.ObjectId) {
-        return await this.productRepository.getPropertyById(productId);
+    async getPropertyByUSerId(userId: MongooseSchema.Types.ObjectId) {
+        return await this.productRepository.getPropertyById(userId);
+    }
+
+    async getPropertyById(propertyId: MongooseSchema.Types.ObjectId) {
+        return await this.productRepository.getPropertyByUserId(propertyId);
     }
 
     async getProperties(getQueryDto: GetQueryDto) {

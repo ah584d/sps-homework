@@ -58,19 +58,21 @@ export class PropertyRepository {
         return product;
     }
 
-    async getProperties(query: GetQueryDto) {
-        let from = query.from || 0;
+    async getProperties(query: GetQueryDto, userId?: MongooseSchema.Types.ObjectId) {
+        let from = query?.from || 0;
         from = Number(from);
 
-        let limit = query.limit || 0;
+        let limit = query?.limit || 0;
         limit = Number(limit);
 
         let products: Property[];
 
+        const filter = userId? {userId} : undefined;
+        console.log(`====> DEBUG filter: `, filter);
         try {
             if (limit === 0) {
                 products = await this.propertyModel
-                    .find()
+                    .find(filter)
                     .populate('userId', 'name email')
                     .skip(from)
                     .sort({ createdAt: -1 })
@@ -85,39 +87,40 @@ export class PropertyRepository {
                     .exec();
             }
 
-            let response;
-
-            if (products.length > 0) {
-                response = {
-                    ok: true,
-                    data: products,
-                    message: 'Get all properties Ok!',
-                };
-            } else {
-                response = {
-                    ok: true,
-                    data: [],
-                    message: 'No property founds',
-                };
-            }
-            return response;
+            return products.length > 0 ? products: [];
+           
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
     }
 
-    async getPropertyById(id: MongooseSchema.Types.ObjectId) {
-        let product: Property;
+    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId) {
+        let properties: Property[];
         try {
-            product = await this.propertyModel.findById(id).exec();
+            properties = await this.getProperties(undefined,userId);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
 
-        if (!product) {
+        if (!properties) {
+            throw new NotFoundException(`No property found for user ${userId}`);
+        }
+
+        return properties;
+    }
+
+    async getPropertyById(id: MongooseSchema.Types.ObjectId) {
+        let property: Property;
+        try {
+            property = await this.propertyModel.findById(id).exec();
+        } catch (error) {
+            throw new InternalServerErrorException(error);
+        }
+
+        if (!property) {
             throw new NotFoundException('The property with this id does not exist');
         }
 
-        return product;
+        return property;
     }
 }

@@ -6,6 +6,9 @@ export const initAxios = (): void => {
 
 export const setTokenOnHttpHeader = (token: string): void => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+//     axios.interceptors.request.use(
+//         (request) => console.log(request)
+//     );
 };
 
 export const deleteTokenOnHttpHeader = (): void => {
