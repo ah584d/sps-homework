@@ -1,6 +1,6 @@
 import { AxiosError, AxiosResponse } from 'axios';
 
-export type HttpError<T = any> = AxiosError<T>;
+export interface HttpError<T = any> extends AxiosError<T> {}
 
 // hide axios implementation from http consumer
 export type HttpResponse<T> = AxiosResponse<T>;

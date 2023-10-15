@@ -4,7 +4,7 @@ export interface AuthContextType {
 }
 
 export interface PropertyPayload {
-    id: string;
+    _id: string;
     category: string;
     imageURL: string;
     propertyName: string;

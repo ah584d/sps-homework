@@ -11,17 +11,17 @@ const Home = (): ReactElement => {
         const [, result] = await getPropertiesByUserId(userId);
         if (result) {
             setProperties(result);
-        }
+        } 
     };
 
-    const { id } = useParams() ?? {};
+    const { userId } = useParams() ?? {};
 
     const [properties, setProperties] = useState<PropertyPayload[]>([]);
     useEffect(() => {
-        if (id) {
-            fetchProperties(id);
+        if (userId) {
+            fetchProperties(userId);
         }
-    }, [id]);
+    }, [userId]);
 
     return (
         <div className={styles.homeContainer}>
