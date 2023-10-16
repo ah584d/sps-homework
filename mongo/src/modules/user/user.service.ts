@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ClientSession } from 'mongoose';
+import { ClientSession, Schema as MongooseSchema } from 'mongoose';
 import { UserRepository } from '../../repositories/db/user.repository';
 import { CreateUserDto } from './dto/createUser.dto';
 
@@ -16,7 +16,7 @@ export class UserService {
         return await this.userRepository.getAllUsers();
     }
 
-    async getUserById(id: string) {
+    async getUserById(id: MongooseSchema.Types.ObjectId) {
         return await this.userRepository.getUserById(id);
     }
 

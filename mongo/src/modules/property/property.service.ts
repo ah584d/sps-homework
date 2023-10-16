@@ -4,10 +4,11 @@ import { GetQueryDto } from 'src/modules/property/dto/getQueryDto';
 import { PropertyRepository } from '../../repositories/db/property.repository';
 import { CreatePropertyDto } from './dto/createProperty.dto';
 import { UpdatePropertyDto } from './dto/updateProperty.dto';
+import { UserRepository } from 'src/repositories/db/user.repository';
 
 @Injectable()
 export class PropertyService {
-    constructor(private productRepository: PropertyRepository) {}
+    constructor(private productRepository: PropertyRepository, private userRepository: UserRepository) {}
 
     async createProperty(createPropertyDto: CreatePropertyDto, session: ClientSession) {
         return await this.productRepository.createProperty(createPropertyDto, session);
@@ -26,6 +27,7 @@ export class PropertyService {
     }
 
     async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId) {
-        return await this.productRepository.getPropertyByUserId(userId);
+        const userDetails = await this.userRepository.getUserById(userId);
+        return await this.productRepository.getPropertyByUserId(userId, userDetails?.role === 'ADMIN');
     }
 }

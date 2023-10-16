@@ -1,6 +1,6 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { ClientSession, Model } from 'mongoose';
+import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../../modules/user/dto/createUser.dto';
 
@@ -50,7 +50,7 @@ export class UserRepository {
         return users;
     }
 
-    async getUserById(id: string) {
+    async getUserById(id: MongooseSchema.Types.ObjectId) {
         let user: User;
         try {
             user = await this.userModel.findById(id);

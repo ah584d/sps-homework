@@ -29,7 +29,6 @@ export class PropertyRepository {
 
     async updateProperty(updateProperty: UpdatePropertyDto, session: ClientSession) {
         const actualDate = new Date();
-
         const update = {
             userId: updateProperty.userId,
             status: updateProperty.status,
@@ -57,7 +56,7 @@ export class PropertyRepository {
         return product;
     }
 
-    async getProperties(query: GetQueryDto, userId?: MongooseSchema.Types.ObjectId) {
+    async getProperties(query: GetQueryDto, userId?: MongooseSchema.Types.ObjectId, isAdmin?: boolean) {
         let from = query?.from || 0;
         from = Number(from);
 
@@ -66,10 +65,13 @@ export class PropertyRepository {
 
         let products: Property[];
 
-        // filter the properties for which the userId match, or if the property does not have userId defined
-        const filter = {
-            $or: [{ userId: userId }, { userId: { $exists: false } }],
-        };
+        // filter the properties for which the userId matches, or if the property does not have userId defined.
+        // If user is admin, do not apply any filter
+        const filter = !isAdmin
+            ? {
+                  $or: [{ userId: userId }, { userId: { $exists: false } }],
+              }
+            : undefined;
 
         try {
             if (limit === 0) {
@@ -95,10 +97,10 @@ export class PropertyRepository {
         }
     }
 
-    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId) {
+    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId, isAdmin?: boolean) {
         let properties: Property[];
         try {
-            properties = await this.getProperties(undefined, userId);
+            properties = await this.getProperties(undefined, userId, isAdmin);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

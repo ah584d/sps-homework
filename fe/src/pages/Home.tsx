@@ -18,7 +18,6 @@ const Home = (): ReactElement => {
     };
 
     const { userId } = useParams() ?? {};
-
     const [properties, setProperties] = useState<PropertyPayload[]>([]);
     const [displayProperties, setDisplayProperties] = useState<PropertyPayload[]>([]);
 
@@ -54,7 +53,7 @@ const Home = (): ReactElement => {
             <Header />
             <div className={styles.listingContainer}>
                 <SearchBar searchAction={searchActionCB} />
-                <Listing userId={} listing={displayProperties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
+                <Listing userId={userId} listing={displayProperties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
             </div>
         </div>
     );

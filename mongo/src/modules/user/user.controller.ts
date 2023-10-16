@@ -2,9 +2,9 @@ import { BadRequestException, Body, Controller, Get, HttpStatus, Param, Post, Re
 import { InjectConnection } from '@nestjs/mongoose';
 import { Response } from 'express';
 import { Connection, Schema as MongooseSchema } from 'mongoose';
+import { AuthGuard } from '../auth/auth.guard';
 import { CreateUserDto } from './dto/createUser.dto';
 import { UserService } from './user.service';
-import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('user')
 export class UserController {
@@ -31,10 +31,9 @@ export class UserController {
         return res.status(HttpStatus.OK).send(users);
     }
 
-
     @UseGuards(AuthGuard)
     @Get('/:id')
-    async getUserById(@Param('id') id: string, @Res() res: Response) {
+    async getUserById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
         const user = await this.userService.getUserById(id);
         return res.status(HttpStatus.OK).send(user);
     }
