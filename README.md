@@ -66,7 +66,10 @@
 
 ## Usage
 
-1. list of users, USER and ADMIN will be shared by email
+1. demo@sps.com/my_pass
+2. demo2@sps.com/my_pass
+3. demo3@sps.com/my_pass
+4. admin@sps.com/my_pass
 
 
 
