@@ -26,13 +26,15 @@
 4. No cache management and ahead of time pictures loading
 
 ## Installation
-### Mongo
+
+### local Mongo
 1. docker pull mongo:latest
 2. docker run -d --name mongodb -p 27017:27017 mongo
 3. docker ps
 4. docker exec –it mongodb mongosh
 5. db.runCommand({hello:1})
-   
+### Onlione mongo
+1. I use the free plan of mongo atlas which allows only one IP, -->so please send me your IP<-- to allow connection to the DB
 ### FE
 1. make sure you run with node 18 and above
 2. git clone git@github.com:ah584d/sps-homework.git
