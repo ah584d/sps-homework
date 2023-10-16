@@ -16,13 +16,14 @@
 
 1. I used RESTApi instead of graphQL
 2. Infinite scroll for FE was not implemented
-3. 
+3. Redirect to login page afte token expiration
+4. 
 
 ## Reasons Behind Technical Choices
 1. I invest a lot of time searching some houses pictures and host them online somewhere, so I did not implemented infinite scroll in the front end, because I did not have enought house to make a large scrolling
-
-2. Password is not encrypted, I passed it as clear text in the API, thing that I won't do in Prod level, this is a shortcut for the demo
-3. 
+2. Password is not encrypted, I passed it as clear text in the API, thing that I won't do in Prod level, this is a shortcut for the demo.
+3. I used context instead of normal state management (redux, zustand....).
+4. No cache management and ahead of time pictures loading
 
 ## Installation
 ### Mongo
