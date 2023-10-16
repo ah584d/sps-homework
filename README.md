@@ -53,7 +53,7 @@
 ### non protected routes
 1. POST http://localhost:3001/auth/login
 2. POST http://localhost:3001/property
-3. http://localhost:3001/user
+3. POST http://localhost:3001/user
 
 ### protected routes
 1. GET http://localhost:3001/user
