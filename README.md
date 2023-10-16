@@ -26,12 +26,16 @@
 4. No cache management and ahead of time pictures loading
 
 ## Installation
-### Mongo
+
+### local Mongo
 1. docker pull mongo:latest
 2. docker run -d --name mongodb -p 27017:27017 mongo
 3. docker ps
 4. docker exec –it mongodb mongosh
 5. db.runCommand({hello:1})
+   
+### Online mongo
+1. I use the free plan of mongo atlas which allows only one IP, -->so please send me your IP<-- to allow connection to the DB
    
 ### FE
 1. make sure you run with node 18 and above
@@ -44,10 +48,28 @@
 ### BE
 1. cd mongo
 2. npm run start:dev
-   
+
+## REST API routes
+### non protected routes
+1. POST http://localhost:3001/auth/login
+2. POST http://localhost:3001/property
+3. POST http://localhost:3001/user
+
+### protected routes
+1. GET http://localhost:3001/user
+2. GET http://localhost:3001/user/<id>
+3. GET http://localhost:3001/user/email/<email>
+4. GET http://localhost:3001/property
+5. GET http://localhost:3001/property/<id>
+5. GET http://localhost:3001/property/user/<id>
+4. PUT http://localhost:3001/property/<id>
+
 ## Usage
 
-1. list of users, USER and ADMIN will be shared by email
+1. demo@sps.com/my_pass
+2. demo2@sps.com/my_pass
+3. demo3@sps.com/my_pass
+4. admin@sps.com/my_pass
 
 
 
