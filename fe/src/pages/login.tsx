@@ -84,7 +84,7 @@ const Login = (): ReactElement => {
             <br />
 
             <div className={styles.inputContainer}>
-                <input className={styles.inputButton} type="button" onClick={onButtonClick} value={'Log in'} />
+                <input type="button" onClick={onButtonClick} value={'Log in'} />
             </div>
         </div>
     );

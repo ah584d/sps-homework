@@ -60,6 +60,13 @@ export class ProductController {
     }
 
     @UseGuards(AuthGuard)
+    @Get()
+    async getAllProperties(@Query() getQueryDto: GetQueryDto, @Res() res: Response) {
+        const storages = await this.propertyService.getProperties(getQueryDto);
+        return res.status(HttpStatus.OK).send(storages);
+    }
+
+    @UseGuards(AuthGuard)
     @Get('/:id')
     async getPropertyById(@Param('id') id: MongooseSchema.Types.ObjectId, @Res() res: Response) {
         const storage = await this.propertyService.getPropertyById(id);
@@ -69,14 +76,7 @@ export class ProductController {
     @UseGuards(AuthGuard)
     @Get('/user/:id')
     async getPropertyByUserId(@Param('id') userId: MongooseSchema.Types.ObjectId, @Res() res: Response) {
-        const storage = await this.propertyService.getPropertyById(userId);
+        const storage = await this.propertyService.getPropertyByUserId(userId);
         return res.status(HttpStatus.OK).send(storage);
-    }
-
-    @UseGuards(AuthGuard)
-    @Get()
-    async getAllProperties(@Query() getQueryDto: GetQueryDto, @Res() res: Response) {
-        const storages = await this.propertyService.getProperties(getQueryDto);
-        return res.status(HttpStatus.OK).send(storages);
     }
 }

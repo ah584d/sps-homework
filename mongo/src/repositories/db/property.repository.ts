@@ -29,7 +29,6 @@ export class PropertyRepository {
 
     async updateProperty(updateProperty: UpdatePropertyDto, session: ClientSession) {
         const actualDate = new Date();
-        actualDate.toUTCString();
 
         const update = {
             userId: updateProperty.userId,
@@ -67,7 +66,11 @@ export class PropertyRepository {
 
         let products: Property[];
 
-        const filter = userId? {userId} : undefined;
+        // filter the properties for which the userId match, or if the property does not have userId defined
+        const filter = {
+            $or: [{ userId: userId }, { userId: { $exists: false } }],
+        };
+
         try {
             if (limit === 0) {
                 products = await this.propertyModel
@@ -86,8 +89,7 @@ export class PropertyRepository {
                     .exec();
             }
 
-            return products.length > 0 ? products: [];
-           
+            return products.length > 0 ? products : [];
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
@@ -96,7 +98,7 @@ export class PropertyRepository {
     async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId) {
         let properties: Property[];
         try {
-            properties = await this.getProperties(undefined,userId);
+            properties = await this.getProperties(undefined, userId);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }

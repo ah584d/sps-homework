@@ -6,9 +6,9 @@ export interface CardProps extends PropertyPayload {
     refresh(): void;
 }
 
-export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, refresh }) => {
+export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, refresh, userId }) => {
     const onButtonCLicked = async (): Promise<void> => {
-        await updatePropertyStatus(_id);
+        await updatePropertyStatus(_id, userId);
         refresh();
     };
 

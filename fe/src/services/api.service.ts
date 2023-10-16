@@ -25,10 +25,11 @@ export const getPropertiesByUserId = async (userId: string): Promise<ApiResponse
     }
 };
 
-export const updatePropertyStatus = async (propertyId: string): Promise<ApiResponse<PropertyPayload[]>> => {
+export const updatePropertyStatus = async (propertyId: string, userId: string): Promise<ApiResponse<PropertyPayload[]>> => {
     try {
         const { data } = await networkManager.put<PropertyPayload[]>(`${ROUTES.PROPERTIES.PROPERTY}${propertyId}`, {
             propertyId,
+            userId,
             status: 'SOLD',
         });
         return [null, data];
