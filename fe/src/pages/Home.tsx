@@ -54,7 +54,7 @@ const Home = (): ReactElement => {
             <Header />
             <div className={styles.listingContainer}>
                 <SearchBar searchAction={searchActionCB} />
-                <Listing listing={displayProperties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
+                <Listing userId={} listing={displayProperties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
             </div>
         </div>
     );

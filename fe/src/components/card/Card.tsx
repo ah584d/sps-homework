@@ -14,7 +14,7 @@ export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, s
 
     const isButtonEnabled = status === 'To Sold';
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 transform hover:scale-105 transition-transform duration-300">
             <img className="w-full" src="../../public/default.jpg" alt="house" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 text-start">{propertyName}</div>
