@@ -1,6 +1,10 @@
 import { FC } from 'react';
+import defaultImage from '/default.jpg'; 
 import { updatePropertyStatus } from '../../services/api.service';
 import { PropertyPayload } from '../../types/common .types';
+import styles from './card.module.css';
+import { HouseStatus } from '../../common/const/constants';
+
 
 export interface CardProps extends PropertyPayload {
     refresh(): void;
@@ -12,10 +16,10 @@ export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, s
         refresh();
     };
 
-    const isButtonEnabled = status === 'To Sold';
+    const isButtonEnabled = status === HouseStatus.toSold;
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 transform hover:scale-105 transition-transform duration-300">
-            <img className="w-full" src="../../public/default.jpg" alt="house" />
+        <div className={`max-w-sm rounded overflow-hidden shadow-lg m-4 transform hover:scale-105 transition-transform duration-300`}>
+            <img className={`${styles.image} w-full`} src={imageURL !== 'null' ? imageURL : defaultImage} alt="house" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 text-start">{propertyName}</div>
                 <p className="text-gray-700 text-base text-start">

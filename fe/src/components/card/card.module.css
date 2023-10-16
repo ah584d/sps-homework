@@ -1,0 +1,10 @@
+.card {
+    width: 400px;
+    border: 1px solid #ccc;
+   
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+  }

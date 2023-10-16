@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsString } from "class-validator";
 import { LoginUserDto } from "./userLogin.dto";
+import { UserType } from "../user.types";
 
 export class CreateUserDto extends LoginUserDto{
   @IsString()
@@ -16,5 +17,5 @@ export class CreateUserDto extends LoginUserDto{
 
   @IsString()
   @IsNotEmpty()
-  role: "ADMIN" | "USER";
+  role: UserType;
 }

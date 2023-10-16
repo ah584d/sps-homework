@@ -5,6 +5,7 @@ import { CreatePropertyDto } from '../../modules/property/dto/createProperty.dto
 import { GetQueryDto } from '../../modules/property/dto/getQueryDto';
 import { UpdatePropertyDto } from '../../modules/property/dto/updateProperty.dto';
 import { Property } from '../entities/property.entity';
+import { HouseStatus } from 'src/modules/property/property.consts';
 
 export class PropertyRepository {
     constructor(@InjectModel(Property.name) private readonly propertyModel: Model<Property>) {}
@@ -16,7 +17,7 @@ export class PropertyRepository {
             category: createPropertyDto.category,
             imageURL: createPropertyDto.imageURL,
             price: createPropertyDto.price,
-            status: 'To Sold',
+            status: HouseStatus.toSold,
         });
         try {
             product = await product.save({ session });
