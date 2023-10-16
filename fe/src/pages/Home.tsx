@@ -29,7 +29,6 @@ const Home = (): ReactElement => {
     }, [userId, forceRefetchForDemo]);
 
     const searchActionCB = (criteria: string): void => {
-        console.log(`====> DEBUG criteria: `, criteria);
         if (!criteria || criteria.length === 0) {
             setDisplayProperties(properties);
         }
