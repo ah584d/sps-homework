@@ -33,8 +33,10 @@
 3. docker ps
 4. docker exec –it mongodb mongosh
 5. db.runCommand({hello:1})
-### Onlione mongo
+   
+### Online mongo
 1. I use the free plan of mongo atlas which allows only one IP, -->so please send me your IP<-- to allow connection to the DB
+   
 ### FE
 1. make sure you run with node 18 and above
 2. git clone git@github.com:ah584d/sps-homework.git
@@ -46,7 +48,22 @@
 ### BE
 1. cd mongo
 2. npm run start:dev
-   
+
+## REST API routes
+### non protected routes
+1. POST http://localhost:3001/auth/login
+2. POST http://localhost:3001/property
+3. http://localhost:3001/user
+
+### protected routes
+1. GET http://localhost:3001/user
+2. GET http://localhost:3001/user/<id>
+3. GET http://localhost:3001/user/email/<email>
+4. GET http://localhost:3001/property
+5. GET http://localhost:3001/property/<id>
+5. GET http://localhost:3001/property/user/<id>
+4. PUT http://localhost:3001/property/<id>
+
 ## Usage
 
 1. list of users, USER and ADMIN will be shared by email
