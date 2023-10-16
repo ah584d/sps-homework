@@ -13,24 +13,49 @@ const Home = (): ReactElement => {
         const [, result] = await getPropertiesByUserId(userId);
         if (result) {
             setProperties(result);
+            setDisplayProperties(result);
         }
     };
 
     const { userId } = useParams() ?? {};
 
     const [properties, setProperties] = useState<PropertyPayload[]>([]);
+    const [displayProperties, setDisplayProperties] = useState<PropertyPayload[]>([]);
+
     useEffect(() => {
         if (userId) {
             fetchProperties(userId);
         }
     }, [userId, forceRefetchForDemo]);
 
+    const searchActionCB = (criteria: string): void => {
+        console.log(`====> DEBUG criteria: `, criteria);
+        if (!criteria || criteria.length === 0) {
+            setDisplayProperties(properties);
+        }
+        const searchWord = criteria.toLowerCase();
+        const filteredData = properties.filter((property: PropertyPayload) => {
+            if (criteria === '') {
+                return property;
+            } else {
+                return (
+                    property.category.toLowerCase().includes(searchWord) ||
+                    property.price == +searchWord ||
+                    property.propertyName.toLowerCase().includes(searchWord)
+                );
+            }
+        });
+        if (filteredData.length !== properties.length) {
+            setDisplayProperties(filteredData);
+        }
+    };
+
     return (
         <div className={styles.homeContainer}>
             <Header />
             <div className={styles.listingContainer}>
-                <SearchBar />
-                <Listing listing={properties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
+                <SearchBar searchAction={searchActionCB} />
+                <Listing listing={displayProperties} refresh={() => setForceRefreshForDemo((previous) => !previous)} />
             </div>
         </div>
     );

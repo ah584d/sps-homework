@@ -11,10 +11,8 @@ export const SearchBar: FC<SearchBarProps> = ({ searchAction }) => {
     const debouncedValue = useDebounce<string>(value, 500);
 
     useEffect(() => {
-        if (debouncedValue?.length > 0) {
-            searchAction?.(debouncedValue);
-        }
-    }, [debouncedValue, searchAction]);
+        searchAction?.(debouncedValue);
+    }, [debouncedValue]);
 
     return (
         <div className={styles.searchContainer}>
