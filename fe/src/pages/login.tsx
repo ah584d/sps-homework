@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../common/hooks/auth.hook';
 import { getJWTToken } from '../services/api.service';
-import styles from './login.module.css';
+import styles from './pages.module.css';
 
 const Login = (): ReactElement => {
     const { setToken } = useAuth();

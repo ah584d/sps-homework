@@ -13,6 +13,10 @@
     justify-content: center;
 }
 
+.listingContainer {
+    margin-top: 20px;
+}
+
 .titleContainer {
     display: flex;
     flex-direction: column;
@@ -20,32 +24,6 @@
     font-weight: bolder;
     align-items: center;
     justify-content: center;
-}
-
-.resultContainer,
-.historyItem {
-    flex-direction: row;
-    display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.historyContainer {
-    flex-direction: column;
-    display: flex;
-    height: 200px;
-    align-items: center;
-    flex-grow: 5;
-    justify-content: flex-start;
-}
-
-.buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 260px;
 }
 
 .inputContainer {
