@@ -83,6 +83,6 @@
 
 ## Screenshots
 
-<img src="pictures/login.jpg" align="left" width="250" height="480" style="background-color:white;"/>
-<img src="pictures/page1.jpg" align="left" width="250" height="480" style="background-color:white;"/>
-<img src="pictures/page2.jpg" align="left" width="250" height="480" style="background-color:white;"/>
+<img src="pictures/login.jpg" align="left" width="450" height="350" style="background-color:white;"/>
+<img src="pictures/page1.jpg" align="left" width="450" height="350" style="background-color:white;"/>
+<img src="pictures/page2.jpg" align="left" width="450" height="350" style="background-color:white;"/>
