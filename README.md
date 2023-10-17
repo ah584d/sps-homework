@@ -1,7 +1,7 @@
 <img src="pictures/blue-house.avif" align="right" width="200" height="129" style="background-color:white;"/>
 
 ## SPS
-> A full stack real estate web application , whith NestJS, RecatJS and MongoDB
+> A full stack real estate web application , whith NestJS, ReactJS and MongoDB
 
 ## Features
 
@@ -26,7 +26,6 @@
 ## Left over
 
 1. I used RESTApi instead of graphQL
-3. Redirect to login page afte token expiration
 
 ## Reasons Behind Technical Choices
 1. I invest a lot of time searching some houses pictures and host them online somewhere, and DB is hosted in Atlas in free account (only one user connection allowed)
