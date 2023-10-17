@@ -51,40 +51,47 @@ const Login = (): ReactElement => {
 
     return (
         <div className={styles.loginContainer}>
-            <div className={styles.titleContainer}>
-                <div>Login</div>
-            </div>
+            <div className={styles.loginContent}>
+                <div className={styles.titleContainer}>
+                    <div>Login</div>
+                </div>
 
-            <br />
+                <br />
 
-            <div className={styles.inputContainer}>
-                <input
-                    value={email}
-                    placeholder="Enter your email here"
-                    onChange={(ev) => setEmail(ev.target.value)}
-                    className={styles.inputBox}
-                />
+                <div className={styles.inputContainer}>
+                    <input
+                        value={email}
+                        placeholder="Enter your email here"
+                        onChange={(ev) => setEmail(ev.target.value)}
+                        className={styles.inputBox}
+                    />
 
-                <label className={styles.errorLabel}>{emailError}</label>
-            </div>
+                    <label className={styles.errorLabel}>{emailError}</label>
+                </div>
 
-            <br />
+                <br />
 
-            <div className={styles.inputContainer}>
-                <input
-                    value={password}
-                    placeholder="Enter your password here"
-                    onChange={(ev) => setPassword(ev.target.value)}
-                    className={styles.inputBox}
-                />
+                <div className={styles.inputContainer}>
+                    <input
+                        value={password}
+                        placeholder="Enter your password here"
+                        onChange={(ev) => setPassword(ev.target.value)}
+                        className={styles.inputBox}
+                    />
 
-                <label className={styles.errorLabel}>{passwordError}</label>
-            </div>
+                    <label className={styles.errorLabel}>{passwordError}</label>
+                </div>
 
-            <br />
+                <br />
 
-            <div className={styles.inputContainer}>
-                <input type="button" onClick={onButtonClick} value={'Log in'} />
+                <div className={styles.inputContainer}>
+                    <input
+                        className="active:bg-blue-700 hover:bg-blue-600 cursor-pointer bg-green-500"
+                        type="button"
+                        onClick={onButtonClick}
+                        value={'Log in'}
+                    />
+                </div>
             </div>
         </div>
     );

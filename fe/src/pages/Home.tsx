@@ -1,5 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/header/Header';
 import { Listing } from '../components/listing/Listing';
 import { SearchBar } from '../components/searchBar/SearchBar';
@@ -14,6 +15,8 @@ const Home = (): ReactElement => {
     const [displayProperties, setDisplayProperties] = useState<PropertyPayload[]>([]);
     const [isFetchAllowed, setIsFetchAllowed] = useState(true);
     const [page, setPage] = useState(1);
+
+    const navigate = useNavigate();
 
     const fetchProperties = async (userId: string): Promise<void> => {
         setIsFetchAllowed(false);
@@ -59,11 +62,23 @@ const Home = (): ReactElement => {
         setDisplayProperties(propertiesToDisplay);
     };
 
+    const onLogoutPressed = (): void => {
+        navigate(`/logout`, { replace: true });
+    };
+
     return (
         <div className={styles.homeContainer}>
             <Header />
             <div className={styles.listingContainer}>
-                <SearchBar searchAction={searchActionCB} />
+                <div className={styles.searchContainer}>
+                    <SearchBar searchAction={searchActionCB} />
+                    <input
+                        className="active:bg-blue-700 hover:bg-blue-600 cursor-pointer bg-green-500"
+                        type="button"
+                        onClick={onLogoutPressed}
+                        value={'Log out'}
+                    />
+                </div>
                 <Listing
                     userId={userId ?? ''}
                     listing={displayProperties}

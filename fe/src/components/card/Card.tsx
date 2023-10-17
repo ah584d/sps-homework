@@ -33,7 +33,7 @@ export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, s
                         isButtonEnabled
                             ? 'active:bg-blue-700 hover:bg-blue-600 cursor-pointer bg-green-500'
                             : 'bg-orange-500'
-                    } inline-block shadow-lg   rounded-md px-3 py-1 text-sm font-semibold  text-white mr-2 mb-2`}
+                    } inline-block shadow-lg rounded-md px-3 py-1 text-sm font-semibold  text-white mr-2 mb-2`}
                     onClick={onButtonCLicked}
                 >
                     {status}

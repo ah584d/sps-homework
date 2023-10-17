@@ -17,12 +17,12 @@ const Logout = (): ReactElement => {
     }, 3 * 1000);
 
     return (
-        <div className={styles.mainContainer}>
-            <div className={styles.titleContainer}>
-                <div>Logout</div>
+        <div className={styles.loginContainer}>
+            <div className={styles.logoutContent}>
+                <div className={styles.titleContainer}>
+                    <div>You have been logout, see you soon...</div>
+                </div>
             </div>
-
-            <br />
         </div>
     );
 };

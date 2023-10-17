@@ -39,9 +39,9 @@ input[type="button"] {
     border: none;
     background: cornflowerblue;
     color: white;
-    padding: 8px 20px;
-    margin: 8px;
-    font-size: 24px;
+    padding: 6px 12px;
+    margin: 4px;
+    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
 }

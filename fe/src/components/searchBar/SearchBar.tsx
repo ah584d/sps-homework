@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react';
 import { useDebounce } from '../../common/hooks/debounce.hook';
-import styles from './search.module.css';
 
 interface SearchBarProps {
     searchAction: (criteria: string) => void;
@@ -15,7 +14,7 @@ export const SearchBar: FC<SearchBarProps> = ({ searchAction }) => {
     }, [debouncedValue]);
 
     return (
-        <div className={styles.searchContainer}>
+        <div>
             <div className="relative">
                 <input
                     type="text"
