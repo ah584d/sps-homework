@@ -1,7 +1,7 @@
 <img src="pictures/blue-house.avif" align="right" width="200" height="129" style="background-color:white;"/>
 
 ## SPS
-> A full stack real estate web application , whith NestJS, RecatJS and MongoDB
+> A full stack real estate web application , whith NestJS, ReactJS and MongoDB
 
 ## Features
 
@@ -26,7 +26,6 @@
 ## Left over
 
 1. I used RESTApi instead of graphQL
-3. Redirect to login page afte token expiration
 
 ## Reasons Behind Technical Choices
 1. I invest a lot of time searching some houses pictures and host them online somewhere, and DB is hosted in Atlas in free account (only one user connection allowed)
@@ -56,8 +55,9 @@
 6. open "http://localhost:5173/"
 
 ### BE
-1. cd mongo
-2. npm run start:dev
+1. cd be
+2. npm ci
+3. npm run start:dev
 
 ## REST API routes
 ### non protected routes
@@ -83,6 +83,6 @@
 
 ## Screenshots
 
-<img src="pictures/login.jpg" align="left" width="250" height="480" style="background-color:white;"/>
-<img src="pictures/page1.jpg" align="left" width="250" height="480" style="background-color:white;"/>
-<img src="pictures/page2.jpg" align="left" width="250" height="480" style="background-color:white;"/>
+<img src="pictures/login.jpg" align="left" width="450" height="350" style="background-color:white;"/>
+<img src="pictures/page1.jpg" align="left" width="450" height="350" style="background-color:white;"/>
+<img src="pictures/page2.jpg" align="left" width="450" height="350" style="background-color:white;"/>
