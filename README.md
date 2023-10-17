@@ -44,6 +44,11 @@
 3. docker ps
 4. docker exec –it mongodb mongosh
 5. db.runCommand({hello:1})
+6. copy both json file into the container to allow populating the db
+7. docker cp ./mongo/users.sps.json <your_container_id>:/tmp/users.sps.json
+8. docker cp ./mongo/properties.sps.json <your_container_id>:/tmp/users.sps.json
+9. docker exec –it mongodb mongosh
+
    
 ### Online mongo
 1. I use the free plan of mongo atlas which allows **only one IP, -->so please send me your IP<--** to allow connection to the DB
