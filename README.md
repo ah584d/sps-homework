@@ -26,6 +26,8 @@
 ## Left over
 
 1. I used RESTApi instead of graphQL
+2. Adding load indicator while fetching data
+3. Better manage http request to avoid redundants requests
 
 ## Reasons Behind Technical Choices
 1. I invest a lot of time searching some houses pictures and host them online somewhere, and DB is hosted in Atlas in free account (only one user connection allowed)
