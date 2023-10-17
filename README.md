@@ -9,7 +9,8 @@
     - tailwind
     - login page with protected routes
     - real authentication using credentials and jwt
-    - listing page with search bar, and infinite scroll as pagination
+    - listing page with search bar (type in search bar a price/property type to filter the results on the screen)
+    - Infinite scroll as pagination
 
 2. BE with nestJS in Typescript
    - authentication using JWT
