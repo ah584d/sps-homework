@@ -18,11 +18,11 @@ const Home = (): ReactElement => {
     const [isFetchAllowed, setIsFetchAllowed] = useState(true);
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
-    const { token, isExpired, reEvaluateToken } = useAuth();
+    const { isExpired } = useAuth();
 
     useEffect(() => {
         if (userId) {
-            fetchProperties(userId);
+            fetchProperties(userId, forceRefetchForDemo);
         }
     }, [userId, forceRefetchForDemo]);
 
@@ -37,15 +37,20 @@ const Home = (): ReactElement => {
         }
     }, [isExpired]);
 
-    const fetchProperties = async (userId: string): Promise<void> => {
-        reEvaluateToken(token ?? '');
+    const fetchProperties = async (userId: string, forceRefetchForDemo?: boolean): Promise<void> => {
+        console.log(`====> DEBUG forceRefetchForDemo: `, forceRefetchForDemo);
         setIsFetchAllowed(false);
         const [, result] = await getPropertiesByUserId(userId, page);
         if (result) {
             setProperties((prevItems) => [...prevItems, ...result]);
             setDisplayProperties((prevItems) => [...prevItems, ...result]);
-            setPage((prevPage) => prevPage + 1);
+            if (!forceRefetchForDemo) {
+                setPage((prevPage) => prevPage + 1);
+            }
         }
+        // if (isUnauthorized(error)) {
+        //     onLogoutPressed();
+        // }
         setIsFetchAllowed(true);
     };
 

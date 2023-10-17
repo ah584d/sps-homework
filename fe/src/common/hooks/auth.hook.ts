@@ -5,7 +5,7 @@ import { AuthContextType } from '../../types/common .types';
 
 export const useAuth = () => {
     const tokenAction = useContext<AuthContextType>(AuthContext);
-    const { isExpired, reEvaluateToken } = useJwt(tokenAction.token ?? '');
+    const { isExpired } = useJwt(tokenAction.token ?? '');
 
-    return { ...tokenAction, isExpired, reEvaluateToken };
+    return { ...tokenAction, isExpired };
 };

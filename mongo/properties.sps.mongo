@@ -71,208 +71,89 @@ db.sps.insertMany([{
   "propertyName": "Condos #10"
 },
 {
-  "_id": {
-    "$oid": "652d082ed5ea775c47a18081"
-  },
   "price": 10000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #1",
-  "createdAt": {
-    "$date": "2023-10-16T09:53:50.009Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:53:50.009Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #1"
 },
 {
-  "_id": {
-    "$oid": "652d0835d5ea775c47a18083"
-  },
   "price": 20000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #2",
-  "createdAt": {
-    "$date": "2023-10-16T09:53:57.543Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:53:57.543Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #2"
 },
 {
-  "_id": {
-    "$oid": "652d083dd5ea775c47a18085"
-  },
   "price": 30000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #3",
-  "createdAt": {
-    "$date": "2023-10-16T09:54:05.753Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:54:05.753Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #3"
 },
 {
-  "_id": {
-    "$oid": "652d087ad5ea775c47a18087"
-  },
   "price": 40000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #4",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:06.887Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:06.887Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #4"
 },
 {
-  "_id": {
-    "$oid": "652d0880d5ea775c47a18089"
-  },
   "price": 50000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #5",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:12.031Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:12.031Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #5"
 },
 {
-  "_id": {
-    "$oid": "652d0885d5ea775c47a1808b"
-  },
   "price": 60000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #6",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:17.801Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:17.801Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #6"
 },
 {
-  "_id": {
-    "$oid": "652d088cd5ea775c47a1808d"
-  },
   "price": 70000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #7",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:24.520Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:24.520Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #7"
 },
 {
-  "_id": {
-    "$oid": "652d0891d5ea775c47a1808f"
-  },
   "price": 80000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #8",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:29.711Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:29.711Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #8"
 },
 {
-  "_id": {
-    "$oid": "652d0896d5ea775c47a18091"
-  },
   "price": 90000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
-  "propertyName": "Villas #9",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:34.596Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:34.596Z"
-  },
-  "__v": 0
+  "propertyName": "Villas #9"
 },
 {
-  "_id": {
-    "$oid": "652d089cd5ea775c47a18093"
-  },
   "price": 100000,
   "category": "Villas",
   "imageURL": "null",
   "status": "To Sold",
   "propertyName": "Villas #10",
-  "createdAt": {
-    "$date": "2023-10-16T09:55:40.781Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:55:40.781Z"
-  },
-  "__v": 0
 },
 {
-  "_id": {
-    "$oid": "652d08d6d5ea775c47a18095"
-  },
   "price": 100,
   "category": "Open houses",
   "imageURL": "null",
   "status": "To Sold",
   "propertyName": "Open houses #1",
-  "createdAt": {
-    "$date": "2023-10-16T09:56:38.910Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:56:38.910Z"
-  },
-  "__v": 0
 },
 {
-  "_id": {
-    "$oid": "652d08ddd5ea775c47a18097"
-  },
   "price": 200,
   "category": "Open houses",
   "imageURL": "null",
   "status": "To Sold",
   "propertyName": "Open houses #2",
-  "createdAt": {
-    "$date": "2023-10-16T09:56:45.078Z"
-  },
-  "updatedAt": {
-    "$date": "2023-10-16T09:56:45.078Z"
-  },
-  "__v": 0
+  
 },
 {
   "_id": {

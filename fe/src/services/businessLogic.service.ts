@@ -22,3 +22,5 @@ export const getFilteredProperties = (properties: PropertyPayload[], criteria: s
 
     return properties;
 };
+
+export const isUnauthorized = (error: Error | null): boolean => error?.message?.includes('401') ?? false;
