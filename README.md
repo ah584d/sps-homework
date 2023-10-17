@@ -5,25 +5,33 @@
 
 ## Features
 
-1. FE with react in Typescript, using Tailwind, and with protected routes
+1. FE with react in Typescript
+    - tailwind
+    - login page with protected routes
+    - real authentication using credentials and jwt
+    - listing page with search bar, and infinite scroll as pagination
 
-2. BE with nestJS, authentication using JWT, REST API routes protected
+2. BE with nestJS in Typescript
+   - authentication using JWT
+   - REST API routes and guarded routes
+   - Connection on online MondoDB
    
-3. Mongo db 
+3. Mongo db
+    - local DB using docker
+    - remote DB with Atlas 
 
 
 ## Left over
 
 1. I used RESTApi instead of graphQL
-2. Infinite scroll for FE was not implemented
 3. Redirect to login page afte token expiration
-4. 
 
 ## Reasons Behind Technical Choices
-1. I invest a lot of time searching some houses pictures and host them online somewhere, so I did not implemented infinite scroll in the front end, because I did not have enought house to make a large scrolling
+1. I invest a lot of time searching some houses pictures and host them online somewhere, and DB is hosted in Atlas in free account (only one user connection allowed)
 2. Password is not encrypted, I passed it as clear text in the API, thing that I won't do in Prod level, this is a shortcut for the demo.
 3. I used context instead of normal state management (redux, zustand....).
 4. No cache management and ahead of time pictures loading
+5. I did some shortcut in FE implementation in sync. between FE and BE (I would have use something most robust like Redux toolKit or TanStack Query for Production level project...)
 
 ## Installation
 
