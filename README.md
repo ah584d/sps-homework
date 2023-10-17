@@ -55,8 +55,9 @@
 6. open "http://localhost:5173/"
 
 ### BE
-1. cd mongo
-2. npm run start:dev
+1. cd be
+2. npm ci
+3. npm run start:dev
 
 ## REST API routes
 ### non protected routes
