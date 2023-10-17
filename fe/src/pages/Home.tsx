@@ -6,7 +6,7 @@ import { Header } from '../components/header/Header';
 import { Listing } from '../components/listing/Listing';
 import { SearchBar } from '../components/searchBar/SearchBar';
 import { getPropertiesByUserId } from '../services/api.service';
-import { getFilteredProperties } from '../services/businessLogic.service';
+import { getFilteredProperties, isUnauthorized } from '../services/businessLogic.service';
 import { PropertyPayload } from '../types/common .types';
 import styles from './pages.module.css';
 
@@ -22,7 +22,7 @@ const Home = (): ReactElement => {
 
     useEffect(() => {
         if (userId) {
-            fetchProperties(userId, forceRefetchForDemo);
+            fetchProperties(userId);
         }
     }, [userId, forceRefetchForDemo]);
 
@@ -37,20 +37,22 @@ const Home = (): ReactElement => {
         }
     }, [isExpired]);
 
-    const fetchProperties = async (userId: string, forceRefetchForDemo?: boolean): Promise<void> => {
-        console.log(`====> DEBUG forceRefetchForDemo: `, forceRefetchForDemo);
+    const fetchProperties = async (userId: string, pagination?: boolean): Promise<void> => {
         setIsFetchAllowed(false);
-        const [, result] = await getPropertiesByUserId(userId, page);
+        const [error, result] = await getPropertiesByUserId(userId, page);
         if (result) {
-            setProperties((prevItems) => [...prevItems, ...result]);
-            setDisplayProperties((prevItems) => [...prevItems, ...result]);
-            if (!forceRefetchForDemo) {
+            if (pagination) {
+                setProperties((prevItems) => [...prevItems, ...result]);
+                setDisplayProperties((prevItems) => [...prevItems, ...result]);
                 setPage((prevPage) => prevPage + 1);
+            } else{
+                setProperties(result);
+                setDisplayProperties(result);
             }
         }
-        // if (isUnauthorized(error)) {
-        //     onLogoutPressed();
-        // }
+        if (isUnauthorized(error)) {
+            onLogoutPressed();
+        }
         setIsFetchAllowed(true);
     };
 
@@ -62,7 +64,7 @@ const Home = (): ReactElement => {
         ) {
             return;
         }
-        userId && fetchProperties(userId);
+        userId && fetchProperties(userId, true);
     };
 
     const searchActionCB = (criteria: string): void => {
