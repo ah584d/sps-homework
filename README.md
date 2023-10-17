@@ -11,6 +11,7 @@
     - real authentication using credentials and jwt
     - listing page with search bar (type in search bar a price/property type to filter the results on the screen)
     - Infinite scroll as pagination
+    - auto logout after token expiration
 
 2. BE with nestJS in Typescript
    - authentication using JWT
