@@ -1,0 +1,28 @@
+use users
+
+db.sps.insertMany([
+    {
+        "role": "USER",
+        "password": "my_pass",
+        "email": "demo@sps.com",
+        "name": "gabi"
+    },
+    {
+        "role": "USER",
+        "password": "my_pass",
+        "email": "demo2@sps.com",
+        "name": "vlad",
+    },
+    {
+        "role": "USER",
+        "password": "my_pass",
+        "email": "demo3@sps.com",
+        "name": "menahem",
+    },
+    {
+        "role": "ADMIN",
+        "password": "my_pass",
+        "email": "admin@sps.com",
+        "name": "avraham",
+    }
+])

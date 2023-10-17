@@ -1,0 +1,758 @@
+use properties
+
+db.sps.insertMany([{
+  "price": 1000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #1"
+},
+{
+  "price": 2000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #2"
+},
+{
+  "price": 3000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #3"
+},
+{
+  "price": 4000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #4"
+},
+{
+  "price": 5000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #5"
+},
+{
+  "price": 6000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #6"
+},
+{
+  "price": 7000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #7"
+},
+{
+  "price": 8000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #8"
+},
+{
+  "price": 9000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #9"
+},
+{
+  "price": 10000,
+  "category": "Condos",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Condos #10"
+},
+{
+  "_id": {
+    "$oid": "652d082ed5ea775c47a18081"
+  },
+  "price": 10000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #1",
+  "createdAt": {
+    "$date": "2023-10-16T09:53:50.009Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:53:50.009Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0835d5ea775c47a18083"
+  },
+  "price": 20000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #2",
+  "createdAt": {
+    "$date": "2023-10-16T09:53:57.543Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:53:57.543Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d083dd5ea775c47a18085"
+  },
+  "price": 30000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #3",
+  "createdAt": {
+    "$date": "2023-10-16T09:54:05.753Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:54:05.753Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d087ad5ea775c47a18087"
+  },
+  "price": 40000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #4",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:06.887Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:06.887Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0880d5ea775c47a18089"
+  },
+  "price": 50000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #5",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:12.031Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:12.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0885d5ea775c47a1808b"
+  },
+  "price": 60000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #6",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:17.801Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:17.801Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d088cd5ea775c47a1808d"
+  },
+  "price": 70000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #7",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:24.520Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:24.520Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0891d5ea775c47a1808f"
+  },
+  "price": 80000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #8",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:29.711Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:29.711Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0896d5ea775c47a18091"
+  },
+  "price": 90000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #9",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:34.596Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:34.596Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d089cd5ea775c47a18093"
+  },
+  "price": 100000,
+  "category": "Villas",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Villas #10",
+  "createdAt": {
+    "$date": "2023-10-16T09:55:40.781Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:55:40.781Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08d6d5ea775c47a18095"
+  },
+  "price": 100,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #1",
+  "createdAt": {
+    "$date": "2023-10-16T09:56:38.910Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:56:38.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08ddd5ea775c47a18097"
+  },
+  "price": 200,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #2",
+  "createdAt": {
+    "$date": "2023-10-16T09:56:45.078Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:56:45.078Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08e1d5ea775c47a18099"
+  },
+  "price": 300,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #3",
+  "createdAt": {
+    "$date": "2023-10-16T09:56:49.502Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:56:49.502Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08e6d5ea775c47a1809b"
+  },
+  "price": 400,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #4",
+  "createdAt": {
+    "$date": "2023-10-16T09:56:54.001Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:56:54.001Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08edd5ea775c47a1809d"
+  },
+  "price": 500,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #5",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:01.211Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:01.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08f1d5ea775c47a1809f"
+  },
+  "price": 600,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #6",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:05.971Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:05.971Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08f9d5ea775c47a180a1"
+  },
+  "price": 700,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #7",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:13.082Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:13.082Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d08fed5ea775c47a180a3"
+  },
+  "price": 800,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #8",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:18.580Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:18.580Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0903d5ea775c47a180a5"
+  },
+  "price": 900,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #9",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:23.636Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:23.636Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0909d5ea775c47a180a7"
+  },
+  "price": 1000,
+  "category": "Open houses",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Open houses #10",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:29.338Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:29.338Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d091cd5ea775c47a180a9"
+  },
+  "price": 1000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #1",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:48.336Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:48.336Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0922d5ea775c47a180ab"
+  },
+  "price": 2000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #2",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:54.917Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:54.917Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0927d5ea775c47a180ad"
+  },
+  "price": 3000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #3",
+  "createdAt": {
+    "$date": "2023-10-16T09:57:59.788Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:57:59.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d092cd5ea775c47a180af"
+  },
+  "price": 4000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #4",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:04.810Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:04.810Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0931d5ea775c47a180b1"
+  },
+  "price": 5000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #5",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:09.809Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:09.809Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0936d5ea775c47a180b3"
+  },
+  "price": 6000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #6",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:14.760Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:14.760Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d093bd5ea775c47a180b5"
+  },
+  "price": 7000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #7",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:19.871Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:19.871Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0941d5ea775c47a180b7"
+  },
+  "price": 8000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #8",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:25.952Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:25.952Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d094bd5ea775c47a180b9"
+  },
+  "price": 9000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #9",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:35.350Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:35.350Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0951d5ea775c47a180bb"
+  },
+  "price": 10000,
+  "category": "Lands",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Lands #10",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:41.106Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:41.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0961d5ea775c47a180bd"
+  },
+  "price": 10000,
+  "category": "Bought",
+  "imageURL": "null",
+  "status": "To Sold",
+  "propertyName": "Bought #1",
+  "createdAt": {
+    "$date": "2023-10-16T09:58:57.600Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T09:58:57.600Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d097ad5ea775c47a180bf"
+  },
+  "price": 20000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/9.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #2",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:22.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:41:14.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0980d5ea775c47a180c1"
+  },
+  "price": 30000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/8.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #3",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:28.568Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:40:45.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0985d5ea775c47a180c3"
+  },
+  "price": 40000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/7.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #4",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:33.552Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:40:03.174Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d098bd5ea775c47a180c5"
+  },
+  "price": 50000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/5.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #5",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:39.122Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:39:25.546Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0991d5ea775c47a180c7"
+  },
+  "price": 60000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/4.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #6",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:45.308Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:39:11.599Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d0996d5ea775c47a180c9"
+  },
+  "price": 70000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/3.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #7",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:50.878Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:38:56.139Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d099cd5ea775c47a180cb"
+  },
+  "price": 80000,
+  "category": "Bought",
+  "imageURL": "null",
+  "status": "SOLD",
+  "propertyName": "Bought #8",
+  "createdAt": {
+    "$date": "2023-10-16T09:59:56.223Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T10:42:10.788Z"
+  },
+  "__v": 0,
+  "userId": {
+    "$oid": "652cff6fd5ea775c47a18063"
+  }
+},
+{
+  "_id": {
+    "$oid": "652d09a1d5ea775c47a180cd"
+  },
+  "price": 90000,
+  "category": "Bought",
+  "imageURL": "http://ahamu.free.fr/sps/2.jpg",
+  "status": "To Sold",
+  "propertyName": "Bought #9",
+  "createdAt": {
+    "$date": "2023-10-16T10:00:01.327Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T11:13:28.951Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652d09a6d5ea775c47a180cf"
+  },
+  "price": 100000,
+  "category": "Bought",
+  "imageURL": "null",
+  "status": "SOLD",
+  "propertyName": "Bought #10",
+  "createdAt": {
+    "$date": "2023-10-16T10:00:06.826Z"
+  },
+  "updatedAt": {
+    "$date": "2023-10-16T10:40:39.215Z"
+  },
+  "__v": 0,
+  "userId": {
+    "$oid": "652cff6fd5ea775c47a18063"
+  }
+}])
