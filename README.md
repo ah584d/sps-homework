@@ -43,7 +43,7 @@
 5. db.runCommand({hello:1})
    
 ### Online mongo
-1. I use the free plan of mongo atlas which allows only one IP, -->so please send me your IP<-- to allow connection to the DB
+1. I use the free plan of mongo atlas which allows **only one IP, -->so please send me your IP<--** to allow connection to the DB
    
 ### FE
 1. make sure you run with node 18 and above
