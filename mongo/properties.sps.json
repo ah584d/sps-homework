@@ -1,6 +1,4 @@
-use properties
-
-db.sps.insertMany([
+[
   {
     "price": 1000,
     "category": "Condos",
@@ -231,5 +229,5 @@ db.sps.insertMany([
     "imageURL": "null",
     "status": "To Sold",
     "propertyName": "Lands #3"
-  }]
-)
+  }
+]
