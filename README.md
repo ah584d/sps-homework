@@ -66,12 +66,12 @@
 
 ### protected routes
 1. GET http://localhost:3001/user
-2. GET http://localhost:3001/user/<id>
-3. GET http://localhost:3001/user/email/<email>
+2. GET http://localhost:3001/user/:id
+3. GET http://localhost:3001/user/email/:email
 4. GET http://localhost:3001/property
-5. GET http://localhost:3001/property/<id>
-5. GET http://localhost:3001/property/user/<id>/<pageIndex>
-4. PUT http://localhost:3001/property/<id>
+5. GET http://localhost:3001/property/:id>
+5. GET http://localhost:3001/property/user/:id/:pageIndex
+4. PUT http://localhost:3001/property/:id
 
 ## Usage
 
