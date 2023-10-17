@@ -74,12 +74,15 @@
 5. GET http://localhost:3001/property/user/:id/:pageIndex
 4. PUT http://localhost:3001/property/:id
 
-## Usage
+## Users for demo
 
 1. demo@sps.com/my_pass
 2. demo2@sps.com/my_pass
 3. demo3@sps.com/my_pass
 4. admin@sps.com/my_pass
 
+## Screenshots
 
-
+<img src="pictures/login.jpg" align="left" width="250" height="480" style="background-color:white;"/>
+<img src="pictures/page1.jpg" align="left" width="250" height="480" style="background-color:white;"/>
+<img src="pictures/page2.jpg" align="left" width="250" height="480" style="background-color:white;"/>
