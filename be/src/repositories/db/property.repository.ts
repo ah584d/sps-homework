@@ -68,7 +68,6 @@ export class PropertyRepository {
         const from = start || 0;
         const limit = end || 0;
 
-        console.log(`====> DEBUG from: ${from} limit: ${limit}`);
         let products: Property[];
 
         // filter the properties for which the userId matches, or if the property does not have userId defined.

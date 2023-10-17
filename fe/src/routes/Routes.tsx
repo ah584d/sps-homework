@@ -36,7 +36,6 @@ const Routes = () => {
         },
     ];
 
-    // Define routes accessible only to non-authenticated users
     const routesForNotAuthenticatedOnly = [
         {
             path: '/',
@@ -51,7 +50,6 @@ const Routes = () => {
         ...routesForAuthenticatedOnly,
     ]);
 
-    // Provide the router configuration using RouterProvider
     return <RouterProvider router={router} />;
 };
 
