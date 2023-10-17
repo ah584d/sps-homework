@@ -1,11 +1,11 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
+import { HouseStatus } from 'src/modules/property/property.consts';
 import { CreatePropertyDto } from '../../modules/property/dto/createProperty.dto';
 import { GetQueryDto } from '../../modules/property/dto/getQueryDto';
 import { UpdatePropertyDto } from '../../modules/property/dto/updateProperty.dto';
 import { Property } from '../entities/property.entity';
-import { HouseStatus } from 'src/modules/property/property.consts';
 
 export class PropertyRepository {
     constructor(@InjectModel(Property.name) private readonly propertyModel: Model<Property>) {}
@@ -19,6 +19,7 @@ export class PropertyRepository {
             price: createPropertyDto.price,
             status: HouseStatus.toSold,
         });
+
         try {
             product = await product.save({ session });
         } catch (error) {
@@ -57,13 +58,17 @@ export class PropertyRepository {
         return product;
     }
 
-    async getProperties(query: GetQueryDto, userId?: MongooseSchema.Types.ObjectId, isAdmin?: boolean) {
-        let from = query?.from || 0;
-        from = Number(from);
+    async getProperties(
+        userId?: MongooseSchema.Types.ObjectId,
+        isAdmin?: boolean,
+        pageIndex?: number,
+    ) {
+        const [start, end] = this.getQueryLimits(pageIndex);
 
-        let limit = query?.limit || 0;
-        limit = Number(limit);
+        const from = start || 0;
+        const limit = end || 0;
 
+        console.log(`====> DEBUG from: ${from} limit: ${limit}`);
         let products: Property[];
 
         // filter the properties for which the userId matches, or if the property does not have userId defined.
@@ -98,10 +103,10 @@ export class PropertyRepository {
         }
     }
 
-    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId, isAdmin?: boolean) {
+    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId, isAdmin?: boolean, pageIndex?: number) {
         let properties: Property[];
         try {
-            properties = await this.getProperties(undefined, userId, isAdmin);
+            properties = await this.getProperties(userId, isAdmin, pageIndex);
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
@@ -126,5 +131,17 @@ export class PropertyRepository {
         }
 
         return property;
+    }
+
+    getQueryLimits(pageIndex?: number) {
+        if (pageIndex < 1) {
+            console.warn('Input must be a positive integer greater than or equal to 1.');
+            return undefined;
+        }
+
+        const from = (pageIndex - 1) * 6;
+        const limit = pageIndex * 6;
+
+        return [from, limit];
     }
 }

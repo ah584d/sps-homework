@@ -18,16 +18,16 @@ export class PropertyService {
         return await this.productRepository.updateProperty(updatePropertyDto, session);
     }
 
-    async getProperties(getQueryDto: GetQueryDto) {
-        return await this.productRepository.getProperties(getQueryDto);
+    async getProperties() {
+        return await this.productRepository.getProperties();
     }
 
     async getPropertyById(propertyId: MongooseSchema.Types.ObjectId) {
         return await this.productRepository.getPropertyById(propertyId);
     }
 
-    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId) {
+    async getPropertyByUserId(userId: MongooseSchema.Types.ObjectId, pageIndex: number) {
         const userDetails = await this.userRepository.getUserById(userId);
-        return await this.productRepository.getPropertyByUserId(userId, userDetails?.role === 'ADMIN');
+        return await this.productRepository.getPropertyByUserId(userId, userDetails?.role === 'ADMIN', pageIndex);
     }
 }

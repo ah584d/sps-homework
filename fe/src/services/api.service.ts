@@ -14,9 +14,13 @@ export const getJWTToken = async (email: string, password: string): Promise<ApiR
     }
 };
 
-export const getPropertiesByUserId = async (userId: string): Promise<ApiResponse<PropertyPayload[]>> => {
+export const getPropertiesByUserId = async (
+    userId: string,
+    pageIndex?: number,
+): Promise<ApiResponse<PropertyPayload[]>> => {
     try {
-        const { data } = await networkManager.get<PropertyPayload[]>(`${ROUTES.PROPERTIES.BY_USER_ID}${userId}`);
+        const url = `${ROUTES.PROPERTIES.BY_USER_ID}${userId}/${pageIndex ?? 1}`;
+        const { data } = await networkManager.get<PropertyPayload[]>(url);
         return [null, data];
     } catch (error) {
         const errorSentence = `Error occurred while trying to get properties by user Id ${userId}: ${error}`;
@@ -25,7 +29,10 @@ export const getPropertiesByUserId = async (userId: string): Promise<ApiResponse
     }
 };
 
-export const updatePropertyStatus = async (propertyId: string, userId: string): Promise<ApiResponse<PropertyPayload[]>> => {
+export const updatePropertyStatus = async (
+    propertyId: string,
+    userId: string,
+): Promise<ApiResponse<PropertyPayload[]>> => {
     try {
         console.log(`====> DEBUG userId: `, userId);
 
