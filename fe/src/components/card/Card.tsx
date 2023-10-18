@@ -1,24 +1,24 @@
 import { FC } from 'react';
-import defaultImage from '/default.jpg'; 
-import { updatePropertyStatus } from '../../services/api.service';
+import { HouseStatus } from '../../common/const/constants';
 import { PropertyPayload } from '../../types/common .types';
 import styles from './card.module.css';
-import { HouseStatus } from '../../common/const/constants';
-
+import defaultImage from '/default.jpg';
 
 export interface CardProps extends PropertyPayload {
-    refresh(): void;
+    updateStatus(propertyId: string, newStatus: string): void;
 }
 
-export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, refresh, userId }) => {
+export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, updateStatus, userId }) => {
     const onButtonCLicked = async (): Promise<void> => {
-        await updatePropertyStatus(_id, userId);
-        refresh();
+        // await updatePropertyStatus(_id, userId);
+        updateStatus(_id, HouseStatus.sold);
     };
 
     const isButtonEnabled = status === HouseStatus.toSold;
     return (
-        <div className={`max-w-sm rounded overflow-hidden shadow-lg m-4 transform hover:scale-105 transition-transform duration-300`}>
+        <div
+            className={`max-w-sm rounded overflow-hidden shadow-lg m-4 transform hover:scale-105 transition-transform duration-300`}
+        >
             <img className={`${styles.image} w-full`} src={imageURL !== 'null' ? imageURL : defaultImage} alt="house" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 text-start">{propertyName}</div>

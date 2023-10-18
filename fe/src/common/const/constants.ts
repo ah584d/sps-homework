@@ -1,3 +1,4 @@
 export const HouseStatus = {
-    toSold :'To Sold'
+    toSold :'To Sold',
+    sold :'Sold'
 } as const;

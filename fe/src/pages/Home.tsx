@@ -7,16 +7,24 @@ import { Listing } from '../components/listing/Listing';
 import { SearchBar } from '../components/searchBar/SearchBar';
 import { getPropertiesByUserId } from '../services/api.service';
 import { getFilteredProperties, isUnauthorized } from '../services/businessLogic.service';
-import { PropertyPayload } from '../types/common .types';
+import { useSpsStore } from '../state/store';
 import styles from './pages.module.css';
 
 const Home = (): ReactElement => {
     const { userId } = useParams() ?? {};
-    const [forceRefetchForDemo, setForceRefreshForDemo] = useState(false);
-    const [properties, setProperties] = useState<PropertyPayload[]>([]);
-    const [displayProperties, setDisplayProperties] = useState<PropertyPayload[]>([]);
+    const {
+        properties,
+        setProperties,
+        setFilteredProperties,
+        addPaginationBulk,
+        updatePropertyStatus,
+        filteredProperties,
+    } = useSpsStore((state) => state) ?? {};
+
+    const [isFilteredEnabled, setIsFilteredEnabled] = useState(false);
     const [isFetchAllowed, setIsFetchAllowed] = useState(true);
     const [page, setPage] = useState(1);
+
     const navigate = useNavigate();
     const { isExpired } = useAuth();
 
@@ -24,7 +32,7 @@ const Home = (): ReactElement => {
         if (userId) {
             fetchProperties(userId);
         }
-    }, [userId, forceRefetchForDemo]);
+    }, [userId]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -42,12 +50,10 @@ const Home = (): ReactElement => {
         const [error, result] = await getPropertiesByUserId(userId, page);
         if (result) {
             if (pagination) {
-                setProperties((prevItems) => [...prevItems, ...result]);
-                setDisplayProperties((prevItems) => [...prevItems, ...result]);
+                addPaginationBulk(result);
                 setPage((prevPage) => prevPage + 1);
-            } else{
+            } else {
                 setProperties(result);
-                setDisplayProperties(result);
             }
         }
         if (isUnauthorized(error)) {
@@ -68,10 +74,9 @@ const Home = (): ReactElement => {
     };
 
     const searchActionCB = (criteria: string): void => {
-        setIsFetchAllowed(criteria.length === 0);
-
+        setIsFilteredEnabled(criteria.length > 0);
         const propertiesToDisplay = getFilteredProperties(properties, criteria);
-        setDisplayProperties(propertiesToDisplay);
+        setFilteredProperties(propertiesToDisplay);
     };
 
     const onLogoutPressed = (): void => {
@@ -93,8 +98,8 @@ const Home = (): ReactElement => {
                 </div>
                 <Listing
                     userId={userId ?? ''}
-                    listing={displayProperties}
-                    refresh={() => setForceRefreshForDemo((previous) => !previous)}
+                    listing={isFilteredEnabled ? filteredProperties : properties}
+                    updateStatus={updatePropertyStatus}
                 />
             </div>
         </div>

@@ -24,3 +24,18 @@ export const getFilteredProperties = (properties: PropertyPayload[], criteria: s
 };
 
 export const isUnauthorized = (error: Error | null): boolean => error?.message?.includes('401') ?? false;
+
+export const mergeArraysAndRemoveDuplicates = (
+    array1: PropertyPayload[],
+    array2: PropertyPayload[],
+): PropertyPayload[] => {
+    const uniqueObjects = new Map<string, PropertyPayload>();
+
+    array1.forEach((obj) => uniqueObjects.set(obj._id, obj));
+
+    array2.forEach((obj) => uniqueObjects.set(obj._id, obj));
+
+    const mergedArray: PropertyPayload[] = Array.from(uniqueObjects.values());
+
+    return mergedArray;
+};
