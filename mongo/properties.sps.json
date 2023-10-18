@@ -1,233 +1,253 @@
 [
   {
-    "price": 1000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #1"
+      "price": 60000,
+      "category": "Bought",
+      "imageURL": "http://ahamu.free.fr/sps/4.jpg",
+      "status": "To Sold",
+      "propertyName": "Bought #6"
   },
   {
-    "price": 2000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #2"
+      "price": 40000,
+      "category": "Bought",
+      "imageURL": "http://ahamu.free.fr/sps/7.jpg",
+      "status": "To Sold",
+      "propertyName": "Bought #4"
   },
   {
-    "price": 3000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #3"
+      "price": 30000,
+      "category": "Bought",
+      "imageURL": "http://ahamu.free.fr/sps/8.jpg",
+      "status": "To Sold",
+      "propertyName": "Bought #3"
+  },
+  {      "price": 20000,
+      "category": "Bought",
+      "imageURL": "http://ahamu.free.fr/sps/9.jpg",
+      "status": "To Sold",
+      "propertyName": "Bought #2"
   },
   {
-    "price": 4000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #4"
+      "price": 10000,
+      "category": "Bought",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Bought #1"
   },
   {
-    "price": 5000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #5"
+      "price": 10000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #10"
   },
   {
-    "price": 6000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #6"
+      "price": 9000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #9"
   },
   {
-    "price": 7000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #7"
+      "price": 5000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #5"
   },
   {
-    "price": 8000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #8"
+      "price": 4000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #4"
   },
   {
-    "price": 9000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #9"
+      "price": 3000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #3"
   },
   {
-    "price": 10000,
-    "category": "Condos",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Condos #10"
+      "price": 2000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #2"
   },
   {
-    "price": 10000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #1"
+      "price": 1000,
+      "category": "Lands",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Lands #1"
   },
   {
-    "price": 20000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #2"
+      "price": 1000,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #10"
   },
   {
-    "price": 30000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #3"
+      "price": 900,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #9"
   },
   {
-    "price": 40000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #4"
+      "price": 800,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #8"
   },
   {
-    "price": 50000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #5"
+      "price": 700,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #7"
   },
   {
-    "price": 60000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #6"
+      "price": 600,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #6"
   },
   {
-    "price": 70000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #7"
+      "price": 500,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #5"
   },
   {
-    "price": 80000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #8"
+      "price": 400,
+      "category": "Open houses",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Open houses #4"
   },
   {
-    "price": 90000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #9"
+      "price": 100000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #10"
   },
   {
-    "price": 100000,
-    "category": "Villas",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Villas #10"
+      "price": 90000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #9"
   },
   {
-    "price": 100,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #1"
+      "price": 80000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #8"
   },
   {
-    "price": 200,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #2"
+      "price": 60000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #6"
   },
   {
-    "price": 300,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #3"
+      "price": 50000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #5"
   },
   {
-    "price": 400,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #4"
+      "price": 40000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #4"
   },
   {
-    "price": 500,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #5"
+      "price": 30000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #3"
   },
   {
-    "price": 600,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #6"
+      "price": 20000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #2"
   },
   {
-    "price": 700,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #7"
+      "price": 10000,
+      "category": "Villas",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Villas #1"
   },
   {
-    "price": 800,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #8"
+      "price": 10000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #10"
   },
   {
-    "price": 900,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #9"
+      "price": 9000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #9"
   },
   {
-    "price": 1000,
-    "category": "Open houses",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Open houses #10"
+      "price": 8000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #8"
   },
   {
-    "price": 1000,
-    "category": "Lands",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Lands #1"
+      "price": 7000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #7"
   },
   {
-    "price": 2000,
-    "category": "Lands",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Lands #2"
+      "price": 6000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #6"
   },
   {
-    "price": 3000,
-    "category": "Lands",
-    "imageURL": "null",
-    "status": "To Sold",
-    "propertyName": "Lands #3"
+      "price": 5000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #5"
+  },
+  {
+      "price": 4000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #4"
+  },
+  {
+      "price": 3000,
+      "category": "Condos",
+      "imageURL": "null",
+      "status": "To Sold",
+      "propertyName": "Condos #3"
   }
 ]
