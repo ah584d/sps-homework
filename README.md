@@ -46,7 +46,7 @@
 5. db.runCommand({hello:1})
 6. copy both json file into the container to allow populating the db
 7. docker cp ./mongo/users.sps.json <your_container_id>:/tmp/users.sps.json
-8. docker cp ./mongo/properties.sps.json <your_container_id>:/tmp/users.sps.json
+8. docker cp ./mongo/properties.sps.json <your_container_id>:/tmp/properties.sps.json
 9. docker exec -it <your_container_id> bash
 10. mongoimport --db sps --collection users --file /tmp/users.sps.json --jsonArray
 11. mongoimport --db sps --collection properties --file /tmp/properties.sps.json --jsonArray
