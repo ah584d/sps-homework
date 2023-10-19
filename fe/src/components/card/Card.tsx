@@ -10,7 +10,7 @@ export interface CardProps extends PropertyPayload {
 
 export const Card: FC<CardProps> = ({ category, imageURL, propertyName, price, status, _id, updateStatus, userId }) => {
     const onButtonCLicked = async (): Promise<void> => {
-        // await updatePropertyStatus(_id, userId);
+        await updatePropertyStatus(_id, userId);
         updateStatus(_id, HouseStatus.sold);
     };
 
