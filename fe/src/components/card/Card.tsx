@@ -3,6 +3,7 @@ import { HouseStatus } from '../../common/const/constants';
 import { PropertyPayload } from '../../types/common .types';
 import styles from './card.module.css';
 import defaultImage from '/default.jpg';
+import { updatePropertyStatus } from '../../services/api.service';
 
 export interface CardProps extends PropertyPayload {
     updateStatus(propertyId: string, newStatus: string): void;
