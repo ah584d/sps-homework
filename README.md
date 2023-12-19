@@ -40,7 +40,7 @@
 
 ### local Mongo
 1. docker pull mongo:latest
-2. docker run -d --name mongodb -p 27017:27017 mongo
+2. docker run -d --name mongodb_sps -p 27017:27017 mongo
 3. docker ps
 4. docker exec –it mongodb mongosh [can use container_id instead of mongodb]
 5. db.runCommand({hello:1})
